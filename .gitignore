@@ -31,6 +31,9 @@ yarn-debug.log*
 .coverage
 htmlcov/
 
+# Local guides & scripts
+DEMO_VIDEO_SCRIPT.md
+
 # IDE / OS
 .vscode/
 .idea/
