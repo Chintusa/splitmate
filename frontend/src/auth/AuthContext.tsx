@@ -46,10 +46,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     const initAuth = async () => {
+      const hasSession = localStorage.getItem('splitmate_has_session');
+      if (!hasSession) {
+        setIsLoading(false);
+        setUser(null);
+        setAccessToken(null);
+        return;
+      }
+
       try {
         const res = await refreshApi();
         setUser(res.user);
       } catch {
+        localStorage.removeItem('splitmate_has_session');
         setAccessToken(null);
         setUser(null);
       } finally {
@@ -57,7 +66,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     };
     initAuth();
-    registerUnauthenticatedHandler(() => setUser(null));
+    registerUnauthenticatedHandler(() => {
+      localStorage.removeItem('splitmate_has_session');
+      setUser(null);
+    });
   }, []);
 
   // --- Registration ---
@@ -78,11 +90,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // --- Session ---
   const login = async (email: string, pass: string) => {
     const res = await loginApi(email, pass);
+    localStorage.setItem('splitmate_has_session', 'true');
     setUser(res.user);
   };
 
   const logout = async () => {
-    try { await logoutApi(); } finally { setUser(null); }
+    try {
+      await logoutApi();
+    } finally {
+      localStorage.removeItem('splitmate_has_session');
+      setUser(null);
+    }
   };
 
   const refreshUser = async () => {
