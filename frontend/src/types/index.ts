@@ -10,6 +10,7 @@ export interface Group {
   name: string;
   owner: User;
   members: User[];
+  user_balance_minor?: number;
   created_at: string;
 }
 

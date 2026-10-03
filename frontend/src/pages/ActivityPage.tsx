@@ -7,6 +7,7 @@ import { useAuth } from '../auth/AuthContext';
 import { getHistoryApi } from '../api/dashboard';
 import { getGroupsApi } from '../api/groups';
 import { HistoryItem, Expense, Settlement, Group } from '../types';
+import { useRealtimeUpdate } from '../context/RealtimeContext';
 
 export const ActivityPage: React.FC = () => {
   const { user } = useAuth();
@@ -39,6 +40,10 @@ export const ActivityPage: React.FC = () => {
   useEffect(() => {
     loadData();
   }, []);
+
+  useRealtimeUpdate(() => {
+    loadData();
+  });
 
   const parsedActivities = useMemo(() => {
     return historyItems.map((item, index) => {

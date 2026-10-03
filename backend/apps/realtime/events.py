@@ -18,6 +18,20 @@ def broadcast_group_updated(group_id: int, reason: str = None):
             "data": data
         }
     )
+    # Also notify all members in their personal user rooms so all dashboard / list pages update live
+    try:
+        from apps.groups.models import Membership
+        member_ids = list(Membership.objects.filter(group_id=group_id).values_list('user_id', flat=True))
+        for uid in member_ids:
+            async_to_sync(channel_layer.group_send)(
+                f"user_{uid}",
+                {
+                    "type": "user_event",
+                    "data": data
+                }
+            )
+    except Exception:
+        pass
 
 
 def broadcast_balance_updated(group_id: int, affected_user_ids: list = None):
@@ -28,8 +42,21 @@ def broadcast_balance_updated(group_id: int, affected_user_ids: list = None):
         "event": "balance:updated",
         "group_id": group_id
     }
-    if affected_user_ids:
-        for uid in affected_user_ids:
+    # Always notify the group room
+    async_to_sync(channel_layer.group_send)(
+        f"group_{group_id}",
+        {
+            "type": "group_event",
+            "data": data
+        }
+    )
+    # Also notify all members in their personal user rooms
+    try:
+        from apps.groups.models import Membership
+        target_uids = set(affected_user_ids or [])
+        member_uids = set(Membership.objects.filter(group_id=group_id).values_list('user_id', flat=True))
+        all_uids = target_uids.union(member_uids)
+        for uid in all_uids:
             async_to_sync(channel_layer.group_send)(
                 f"user_{uid}",
                 {
@@ -37,14 +64,8 @@ def broadcast_balance_updated(group_id: int, affected_user_ids: list = None):
                     "data": data
                 }
             )
-    else:
-        async_to_sync(channel_layer.group_send)(
-            f"group_{group_id}",
-            {
-                "type": "group_event",
-                "data": data
-            }
-        )
+    except Exception:
+        pass
 
 
 def broadcast_to_user(user_id: int, event_name: str, payload: dict = None):

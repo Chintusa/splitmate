@@ -6,6 +6,7 @@ import EmptyState from '../components/ui/EmptyState';
 import { useAuth } from '../auth/AuthContext';
 import { getHistoryApi } from '../api/dashboard';
 import { HistoryItem, Expense, Settlement } from '../types';
+import { useRealtimeUpdate } from '../context/RealtimeContext';
 
 export const PersonalHistoryPage: React.FC = () => {
   const { user } = useAuth();
@@ -31,6 +32,10 @@ export const PersonalHistoryPage: React.FC = () => {
   useEffect(() => {
     loadData();
   }, []);
+
+  useRealtimeUpdate(() => {
+    loadData();
+  });
 
   const parsedTransactions = useMemo(() => {
     return historyItems.map((item, index) => {

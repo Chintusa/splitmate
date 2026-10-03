@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getGroupsApi, createGroupApi } from '../api/groups';
 import { Group } from '../types';
+import { useRealtimeUpdate } from '../context/RealtimeContext';
 import Modal from '../components/ui/Modal';
 import Input from '../components/ui/Input';
 import Button from '../components/ui/Button';
@@ -21,7 +22,6 @@ export default function GroupsPage() {
   const [createError, setCreateError] = useState<string | null>(null);
 
   const fetchGroups = () => {
-    setLoading(true);
     getGroupsApi()
       .then((data) => setGroups(data))
       .catch((err) => console.error('Failed to load groups', err))
@@ -29,11 +29,56 @@ export default function GroupsPage() {
   };
 
   useEffect(() => {
+    setLoading(true);
     fetchGroups();
   }, []);
 
+  // Real-time synchronization: re-fetch whenever any group, expense, or settlement changes
+  useRealtimeUpdate(() => {
+    fetchGroups();
+  });
+
+  // Calculate live aggregate totals across all groups
+  const { totalOwed, totalOwe, pendingCount, oweCount, owedCount, settledCount } = useMemo(() => {
+    let owed = 0;
+    let owe = 0;
+    let pending = 0;
+    let cOwe = 0;
+    let cOwed = 0;
+    let cSettled = 0;
+
+    groups.forEach((g) => {
+      const bal = g.user_balance_minor || 0;
+      if (bal > 0) {
+        owed += bal;
+        pending += 1;
+        cOwed += 1;
+      } else if (bal < 0) {
+        owe += Math.abs(bal);
+        pending += 1;
+        cOwe += 1;
+      } else {
+        cSettled += 1;
+      }
+    });
+
+    return {
+      totalOwed: owed / 100,
+      totalOwe: owe / 100,
+      pendingCount: pending,
+      oweCount: cOwe,
+      owedCount: cOwed,
+      settledCount: cSettled,
+    };
+  }, [groups]);
+
   const displayedGroups = useMemo(() => {
     const list = groups.filter((g) => {
+      const bal = g.user_balance_minor || 0;
+      if (filter === 'owe' && bal >= 0) return false;
+      if (filter === 'owed' && bal <= 0) return false;
+      if (filter === 'settled' && bal !== 0) return false;
+
       if (search.trim()) {
         const q = search.toLowerCase();
         const matchesName = g.name.toLowerCase().includes(q);
@@ -58,7 +103,7 @@ export default function GroupsPage() {
       const bDate = new Date(b.created_at || 0).getTime() || b.id;
       return bDate - aDate;
     });
-  }, [groups, search, sortBy]);
+  }, [groups, filter, search, sortBy]);
 
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -135,10 +180,10 @@ export default function GroupsPage() {
               You Are Owed
             </span>
             <span className="font-currency-display text-currency-display text-tertiary tabular-nums font-bold">
-              ₹0.00
+              ₹{totalOwed.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
             </span>
             <span className="font-body-sm text-body-sm text-on-surface-variant">
-              Across active member groups
+              {owedCount} {owedCount === 1 ? 'group owing you' : 'groups owing you'}
             </span>
           </div>
           <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-tertiary shrink-0">
@@ -152,10 +197,10 @@ export default function GroupsPage() {
               You Owe Others
             </span>
             <span className="font-currency-display text-currency-display text-error tabular-nums font-bold">
-              ₹0.00
+              ₹{totalOwe.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
             </span>
             <span className="font-body-sm text-body-sm text-on-surface-variant">
-              0 pending settlements
+              {oweCount} {oweCount === 1 ? 'group pending payment' : 'groups pending payment'}
             </span>
           </div>
           <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-error shrink-0">
@@ -193,6 +238,36 @@ export default function GroupsPage() {
             >
               All Groups ({groups.length})
             </button>
+            <button
+              onClick={() => setFilter('owed')}
+              className={`px-3 py-1.5 rounded-lg font-label-md text-label-md shrink-0 transition-all font-medium ${
+                filter === 'owed'
+                  ? 'bg-tertiary-container text-on-primary shadow-xs'
+                  : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'
+              }`}
+            >
+              You are Owed ({owedCount})
+            </button>
+            <button
+              onClick={() => setFilter('owe')}
+              className={`px-3 py-1.5 rounded-lg font-label-md text-label-md shrink-0 transition-all font-medium ${
+                filter === 'owe'
+                  ? 'bg-error text-white shadow-xs'
+                  : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'
+              }`}
+            >
+              You Owe ({oweCount})
+            </button>
+            <button
+              onClick={() => setFilter('settled')}
+              className={`px-3 py-1.5 rounded-lg font-label-md text-label-md shrink-0 transition-all font-medium ${
+                filter === 'settled'
+                  ? 'bg-surface-container-highest text-on-surface font-semibold shadow-xs'
+                  : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'
+              }`}
+            >
+              Settled ({settledCount})
+            </button>
           </div>
         </div>
 
@@ -209,7 +284,7 @@ export default function GroupsPage() {
               className="appearance-none h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md border border-surface-container-high/60 focus:outline-none focus:ring-2 focus:ring-primary shadow-xs cursor-pointer"
             >
               <option value="recent">Recently Active</option>
-              <option value="highest">Highest Balance</option>
+              <option value="highest">Most Members</option>
               <option value="alpha">Alphabetical</option>
             </select>
             <span className="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-outline pointer-events-none">
@@ -230,76 +305,100 @@ export default function GroupsPage() {
         />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayedGroups.map((grp) => (
-            <div
-              key={grp.id}
-              className="group flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-all duration-200 overflow-hidden relative"
-            >
-              {/* Visual Accent Stripe */}
-              <div className="h-1.5 w-full bg-primary" />
+          {displayedGroups.map((grp) => {
+            const bal = grp.user_balance_minor || 0;
+            return (
+              <div
+                key={grp.id}
+                className="group flex flex-col justify-between rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-all duration-200 overflow-hidden relative"
+              >
+                {/* Visual Accent Stripe: green if owed, red if owe, emerald if settled */}
+                <div
+                  className={`h-1.5 w-full ${
+                    bal > 0 ? 'bg-tertiary' : bal < 0 ? 'bg-error' : 'bg-primary'
+                  }`}
+                />
 
-              <div className="p-6 flex flex-col gap-4">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container shrink-0 shadow-xs">
-                      <span className="material-symbols-outlined text-[24px]">group</span>
-                    </div>
-                    <div className="flex flex-col min-w-0">
-                      <div className="flex items-center gap-1.5">
-                        <h2 className="font-headline-md text-headline-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">
-                          {grp.name}
-                        </h2>
+                <div className="p-6 flex flex-col gap-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container shrink-0 shadow-xs">
+                        <span className="material-symbols-outlined text-[24px]">group</span>
                       </div>
-                      <span className="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[14px]">person</span>
-                        Created by {grp.owner?.name || 'You'}
-                      </span>
+                      <div className="flex flex-col min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <h2 className="font-headline-md text-headline-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">
+                            {grp.name}
+                          </h2>
+                        </div>
+                        <span className="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+                          <span className="material-symbols-outlined text-[14px]">person</span>
+                          Created by {grp.owner?.name || 'You'}
+                        </span>
+                      </div>
                     </div>
+
+                    <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-container-low text-on-surface-variant shrink-0">
+                      {grp.members?.length || 1} members
+                    </span>
                   </div>
 
-                  <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-container-low text-on-surface-variant shrink-0">
-                    {grp.members?.length || 1} members
-                  </span>
-                </div>
-
-                {/* Balance Status Cardlet */}
-                <div className="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
-                  <span className="font-body-sm text-body-sm text-on-surface-variant">
-                    Group Ledger Standing
-                  </span>
-                  <span className="font-mono tabular-nums font-bold text-tertiary text-sm">
-                    Settled Up
-                  </span>
-                </div>
-
-                {/* Member Avatars Stack */}
-                <div className="flex items-center justify-between pt-1 border-t border-surface-container-high/40">
-                  <div className="flex items-center -space-x-2 overflow-hidden py-1">
-                    {grp.members?.slice(0, 4).map((member) => (
-                      <Avatar
-                        key={member.id}
-                        name={member.name}
-                        size="sm"
-                        className="ring-2 ring-surface-container-lowest"
-                      />
-                    ))}
-                    {(grp.members?.length || 0) > 4 && (
-                      <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-on-surface-variant ring-2 ring-surface-container-lowest font-medium">
-                        +{(grp.members?.length || 0) - 4}
+                  {/* Balance Status Cardlet */}
+                  <div className="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+                    <span className="font-body-sm text-body-sm text-on-surface-variant">
+                      Group Ledger Standing
+                    </span>
+                    {bal > 0 ? (
+                      <div className="flex flex-col items-end">
+                        <span className="font-mono tabular-nums font-bold text-tertiary text-sm">
+                          +₹{(bal / 100).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
+                        </span>
+                        <span className="text-[11px] text-tertiary font-medium">You are owed</span>
                       </div>
+                    ) : bal < 0 ? (
+                      <div className="flex flex-col items-end">
+                        <span className="font-mono tabular-nums font-bold text-error text-sm">
+                          -₹{(Math.abs(bal) / 100).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
+                        </span>
+                        <span className="text-[11px] text-error font-medium">You owe</span>
+                      </div>
+                    ) : (
+                      <span className="font-mono tabular-nums font-medium text-emerald-700 text-sm flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+                        Settled Up
+                      </span>
                     )}
                   </div>
 
-                  <Link
-                    to={`/groups/${grp.id}`}
-                    className="font-label-md text-label-md text-primary font-medium hover:underline flex items-center gap-1"
-                  >
-                    Open Workspace <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </Link>
+                  {/* Member Avatars Stack */}
+                  <div className="flex items-center justify-between pt-1 border-t border-surface-container-high/40">
+                    <div className="flex items-center -space-x-2 overflow-hidden py-1">
+                      {grp.members?.slice(0, 4).map((member) => (
+                        <Avatar
+                          key={member.id}
+                          name={member.name}
+                          size="sm"
+                          className="ring-2 ring-surface-container-lowest"
+                        />
+                      ))}
+                      {(grp.members?.length || 0) > 4 && (
+                        <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-on-surface-variant ring-2 ring-surface-container-lowest font-medium">
+                          +{(grp.members?.length || 0) - 4}
+                        </div>
+                      )}
+                    </div>
+
+                    <Link
+                      to={`/groups/${grp.id}`}
+                      className="font-label-md text-label-md text-primary font-medium hover:underline flex items-center gap-1"
+                    >
+                      Open Workspace <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 
@@ -308,50 +407,47 @@ export default function GroupsPage() {
         isOpen={isCreateOpen}
         onClose={() => {
           setIsCreateOpen(false);
+          setNewGroupName('');
           setCreateError(null);
         }}
         title="Create New Group"
-        subtitle="Start a collaborative expense pool with your friends or flatmates"
         maxWidth="md"
-        footer={
-          <>
+      >
+        <form onSubmit={handleCreate} className="flex flex-col gap-4">
+          <Input
+            label="Group Name"
+            placeholder="e.g. Goa Trip, Flat 402, Hackathon Team"
+            value={newGroupName}
+            onChange={(e) => setNewGroupName(e.target.value)}
+            error={createError || undefined}
+            autoFocus
+            required
+          />
+          <p className="font-body-sm text-body-sm text-on-surface-variant -mt-2">
+            You will be assigned as the group owner. You can invite friends to join this group right after creating it.
+          </p>
+
+          <div className="flex items-center justify-end gap-3 pt-4 border-t border-surface-container-high">
             <Button
-              variant="outline"
               type="button"
-              onClick={() => setIsCreateOpen(false)}
+              variant="outline"
+              onClick={() => {
+                setIsCreateOpen(false);
+                setNewGroupName('');
+                setCreateError(null);
+              }}
             >
               Cancel
             </Button>
             <Button
-              variant="primary"
               type="submit"
-              form="create-group-form"
+              variant="primary"
               loading={isSubmitting}
+              disabled={!newGroupName.trim()}
             >
               Create Group
             </Button>
-          </>
-        }
-      >
-        <form id="create-group-form" onSubmit={handleCreate} className="flex flex-col gap-4">
-          {createError && (
-            <div className="p-3 rounded-lg bg-error-container text-error font-body-sm text-body-sm">
-              {createError}
-            </div>
-          )}
-
-          <Input
-            label="Group Name"
-            placeholder="e.g. Goa Trip 2024, Flat 402 Expenses"
-            value={newGroupName}
-            onChange={(e) => setNewGroupName(e.target.value)}
-            required
-            autoFocus
-          />
-
-          <p className="font-body-sm text-body-sm text-on-surface-variant">
-            You will be set as the Group Owner. You can add more members via email right inside the group workspace after creating it.
-          </p>
+          </div>
         </form>
       </Modal>
     </div>

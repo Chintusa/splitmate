@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import { getDashboardApi } from '../api/dashboard';
 import { getGroupsApi } from '../api/groups';
 import { DashboardSummary, Group } from '../types';
 import { formatCurrency, formatRelativeTime } from '../utils/formatters';
+import { useRealtimeUpdate } from '../context/RealtimeContext';
 import Avatar from '../components/ui/Avatar';
 import KpiCard from '../components/ui/KpiCard';
 import AppIcon from '../components/ui/AppIcon';
@@ -19,7 +20,7 @@ export default function DashboardPage() {
   const [groups, setGroups] = useState<Group[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const loadDashboardData = useCallback(() => {
     Promise.all([
       getDashboardApi(),
       getGroupsApi(),
@@ -33,6 +34,16 @@ export default function DashboardPage() {
       })
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    setLoading(true);
+    loadDashboardData();
+  }, [loadDashboardData]);
+
+  // Live real-time sync across groups and user balances
+  useRealtimeUpdate(() => {
+    loadDashboardData();
+  });
 
   const totalOwe = data ? data.total_owed_by_me / 100 : 0;
   const totalOwed = data ? data.total_owed_to_me / 100 : 0;

@@ -29,7 +29,7 @@ def list_create_groups(request):
     if request.method == 'GET':
         memberships = Membership.objects.filter(user=request.user).select_related('group', 'group__owner')
         groups = [m.group for m in memberships]
-        serializer = GroupSerializer(groups, many=True)
+        serializer = GroupSerializer(groups, many=True, context={'request': request})
         return Response(serializer.data)
 
     elif request.method == 'POST':
@@ -51,7 +51,7 @@ def list_create_groups(request):
             )
 
         dispatch_group_created(group, request.user)
-        return Response(GroupSerializer(group).data, status=status.HTTP_201_CREATED)
+        return Response(GroupSerializer(group, context={'request': request}).data, status=status.HTTP_201_CREATED)
 
 
 @api_view(['GET', 'DELETE'])
@@ -60,7 +60,7 @@ def group_detail_delete(request, group_id):
     group = get_group_and_check_membership(group_id, request.user)
 
     if request.method == 'GET':
-        return Response(GroupSerializer(group).data)
+        return Response(GroupSerializer(group, context={'request': request}).data)
 
     elif request.method == 'DELETE':
         check_group_owner(group, request.user)

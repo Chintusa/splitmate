@@ -8,7 +8,7 @@ import {
 } from '../api/notifications';
 import { NotificationItem } from '../types';
 import { formatRelativeTime } from '../utils/formatters';
-import { useNotificationSocket } from '../hooks/useNotificationSocket';
+import { useRealtimeUpdate } from '../context/RealtimeContext';
 import NotificationPreferencesModal from './NotificationPreferencesModal';
 import './notifications.css';
 
@@ -45,7 +45,7 @@ export default function NotificationBell() {
     []
   );
 
-  useNotificationSocket(handleSocketEvent);
+  useRealtimeUpdate(handleSocketEvent);
 
   // Fetch list when dropdown opens or tab changes
   useEffect(() => {

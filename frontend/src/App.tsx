@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import { AlertProvider } from './context/AlertContext';
+import { RealtimeProvider } from './context/RealtimeContext';
 import { ProtectedRoute } from './auth/ProtectedRoute';
 import { Loading } from './components/Loading';
 import './pages/auth.css';
@@ -29,7 +30,8 @@ export default function App() {
     <BrowserRouter>
       <AlertProvider>
         <AuthProvider>
-          <Suspense fallback={<Loading fullScreen message="Loading SplitMate..." />}>
+          <RealtimeProvider>
+            <Suspense fallback={<Loading fullScreen message="Loading SplitMate..." />}>
             <Routes>
               {/* Public Routes */}
               <Route path="/" element={<LandingPage />} />
@@ -63,8 +65,9 @@ export default function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
-        </AuthProvider>
-      </AlertProvider>
-    </BrowserRouter>
-  );
+        </RealtimeProvider>
+      </AuthProvider>
+    </AlertProvider>
+  </BrowserRouter>
+);
 }

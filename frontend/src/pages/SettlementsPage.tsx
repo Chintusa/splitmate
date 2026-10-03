@@ -13,6 +13,7 @@ import { getHistoryApi } from '../api/dashboard';
 import { sendSettlementReminderApi } from '../api/notifications';
 import { Group, SimplifiedDebt, Settlement } from '../types';
 import { useAlert } from '../context/AlertContext';
+import { useRealtimeUpdate } from '../context/RealtimeContext';
 
 interface DebtWithGroup extends SimplifiedDebt {
   groupId: number;
@@ -84,6 +85,10 @@ export const SettlementsPage: React.FC = () => {
   useEffect(() => {
     loadData();
   }, []);
+
+  useRealtimeUpdate(() => {
+    loadData();
+  });
 
   const [debtSort, setDebtSort] = useState<'highest' | 'lowest' | 'name'>('highest');
   const [historySort, setHistorySort] = useState<'newest' | 'oldest' | 'highest' | 'lowest'>('newest');
