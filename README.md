@@ -309,13 +309,3 @@ pytest
 
 ---
 
-## 13. Demo Video Guide (4 to 6 Minutes)
-
-When recording your Loom/screen-recording demo, showcase the following side-by-side flow:
-1. **Side-by-Side Windows**: Window 1 with Alice (`alice@test.com`), Window 2 with Bob (`bob@test.com`).
-2. **Group Interaction**: Show Alice viewing "Goa Trip" and adding a new Equal Split expense.
-3. **Instant Live Sync**: Show Bob's window updating balances and activity audit trail **instantly with zero page refresh**.
-4. **Custom/Exact Split**: Add an exact split expense showing inline validation error when shares don't match total.
-5. **Debt Simplification**: View the "Who Owes Whom" card showing the simplified debt.
-6. **Settle Up**: Bob records a repayment to Alice; watch both balances return to zero.
-7. **Permission Enforcement**: Show Bob attempting to edit or delete an expense created by Alice and receiving an error.
