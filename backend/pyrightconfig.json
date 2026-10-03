@@ -1,0 +1,9 @@
+{
+  "pythonVersion": "3.13",
+  "include": ["."],
+  "extraPaths": ["."],
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none",
+  "typeCheckingMode": "basic",
+  "plugins": ["mypy_django_plugin.main"]
+}

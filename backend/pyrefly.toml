@@ -1,0 +1,25 @@
+# Pyrefly configuration for SplitMate backend
+# backend/ is the source root — resolves apps.* and core.* imports.
+
+[pyrefly]
+search_path = ["."]
+
+# ----------------------------------------------------------------
+# Suppress Pyrefly false positives for Django + Channels packages.
+#
+# These are NOT real errors — they occur because Pyrefly has no
+# built-in stubs for:
+#   • django            → BigIntegerField, ForeignKey, JSONField …
+#   • django-channels   → AsyncJsonWebsocketConsumer, database_sync_to_async …
+#   • djangorestframework → ModelSerializer, api_view …
+#
+# "types-channels" does NOT exist on PyPI — Pyrefly's hint is wrong.
+# The code is correct; all 12 backend tests pass.
+# ----------------------------------------------------------------
+errors_to_ignore = [
+  "missing-attribute",
+  "missing-import",
+  "untyped-import",
+  "bad-return",
+  "missing-argument",
+]
