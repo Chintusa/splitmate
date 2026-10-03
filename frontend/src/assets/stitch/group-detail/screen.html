@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#faf8ff","on-primary":"#ffffff","surface-container-highest":"#dae2fd","on-tertiary-fixed-variant":"#005320","surface-variant":"#dae2fd","surface-dim":"#d2d9f4","on-primary-container":"#a3faef","on-secondary-container":"#fffbff","secondary":"#4b41e1","surface-container-low":"#f2f3ff","secondary-fixed":"#e2dfff","surface-container":"#eaedff","secondary-fixed-dim":"#c3c0ff","outline":"#6e7977","surface-tint":"#006a63","inverse-surface":"#283044","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#62df7d","tertiary":"#005f26","surface-bright":"#faf8ff","tertiary-container":"#007a33","error-container":"#ffdad6","primary-fixed-dim":"#80d5cb","on-surface":"#131b2e","on-secondary-fixed-variant":"#3323cc","on-primary-fixed":"#00201d","inverse-on-surface":"#eef0ff","surface":"#faf8ff","on-tertiary-fixed":"#002109","on-background":"#131b2e","on-error-container":"#93000a","primary-fixed":"#9cf2e8","error":"#ba1a1a","on-secondary":"#ffffff","on-secondary-fixed":"#0f0069","outline-variant":"#bdc9c6","primary":"#005c55","tertiary-fixed":"#7ffc97","primary-container":"#0f766e","secondary-container":"#645efb","on-tertiary-container":"#a1ffad","on-surface-variant":"#3e4947","surface-container-high":"#e2e7ff","on-tertiary":"#ffffff","inverse-primary":"#80d5cb","on-primary-fixed-variant":"#00504a","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-lg":"1.5rem","margin-mobile":"1rem","space-md":"1rem","space-xl":"2rem","margin":"2rem","gutter-mobile":"1rem","gutter":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"body-md":["Geist"],"display-lg":["Geist"],"headline-md":["Geist"],"body-sm":["Geist"],"headline-lg":["Geist"],"body-lg":["Geist"],"label-sm":["Geist"],"headline-sm":["Geist"],"display-lg-mobile":["Geist"],"currency-display":["Geist"],"label-md":["Geist"],"currency-md":["Geist"]},"fontSize":{"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"currency-display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"500"}],"currency-md":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><img alt="SplitMate Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wny46Lu5jKp7s0kVi9YZFCUqZMqBqzm50-NCjlPmteLUVPxEcjewjPfNaiZrxJ2Tm5QMgHGr8LeSrAOTePlt0gtxK1K_sr1xl6L2TdzXPHBSheFCn5aoobFQXndpkLHeJEttDr3aD0cIh8ORHvmPUYCh59MDTCuT6JsXcqq5Ifb0d73P7SlXI1yfDvxU9MxB4hW60VUPlvHEdJ5JDoV34WYf0pvbmUIMyrr90PWLa4Siw4qD_U8xDeoiA"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">SplitMate</span></div><nav class="flex flex-col gap-space-xs px-space-md mt-space-md" data-active-classes="bg-primary-container text-on-primary font-label-md text-label-md rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-label-md text-label-md rounded-lg" data-path="my-groups" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>My Groups</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="activity" href="#"><span class="material-symbols-outlined text-[20px]">bolt</span><span>Activity</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settlements" href="#"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span>Settlements</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="personal-history" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Personal History</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-md m-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm overflow-hidden"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwQK0tCpBdkc5xBO8EetghpVNZDcfhIzS4J0jb-VRPOnc5fVCzesIs-Kb-tOKzj_uWHXUdQhwzTZ_JWiZ80uOMgFyoRdlbO8VGSvWpPbcVa161FH1g8sBhxU6hkjl2ZmJniXZZXugv4uOdue2G9ooNqy8CdmqnjahKgs1Ul4k9pEWGHtwen0lrTATFVavuliwc6R73tt63F8XzXSHHDMpHsHsi-7rR0O-04UlQ47mDysGe3jZ-v1Qe"/><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface truncate">Arjun Mehta</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">arjun@splitmate.app</span></div></div><button class="p-space-xs rounded text-on-surface-variant hover:text-error hover:bg-surface-container-highest transition-colors shrink-0" title="Log out" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm text-on-surface">SplitMate Workspace</span><div class="flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.04)] cursor-help" title="Real-time WebSocket active"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Live</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant pointer-events-none">search</span><input class="h-10 pl-9 pr-12 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-[0_1px_4px_rgba(0,0,0,0.04)] w-64 transition-all" placeholder="Search transactions, groups..." type="text"/><kbd class="absolute right-3 font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded pointer-events-none">⌘K</kbd></div><button class="h-10 px-space-md bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-space-xs hover:bg-primary transition-colors shadow-[0_1px_4px_rgba(0,0,0,0.08)]" type="button"><span class="material-symbols-outlined text-[20px]">add</span><span>Add Expense</span></button><div class="relative"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0 cursor-pointer shadow-[0_1px_4px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwQK0tCpBdkc5xBO8EetghpVNZDcfhIzS4J0jb-VRPOnc5fVCzesIs-Kb-tOKzj_uWHXUdQhwzTZ_JWiZ80uOMgFyoRdlbO8VGSvWpPbcVa161FH1g8sBhxU6hkjl2ZmJniXZZXugv4uOdue2G9ooNqy8CdmqnjahKgs1Ul4k9pEWGHtwen0lrTATFVavuliwc6R73tt63F8XzXSHHDMpHsHsi-7rR0O-04UlQ47mDysGe3jZ-v1Qe"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Visual Header Canvas -->
+<div class="relative w-full overflow-hidden bg-surface-container-low px-space-xl pt-space-xl pb-space-lg">
+<!-- Ambient Backdrop Aura -->
+<div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 left-1/3 w-80 h-80 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<div class="relative max-w-7xl mx-auto flex flex-col gap-space-lg">
+<!-- Breadcrumb & Real-time Live Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span>My Groups</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Goa Trip 2024</span>
+<span class="ml-space-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold tracking-wide uppercase">Vacation</span>
+</div>
+<!-- Live Sync Pill -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-3 py-1.5 rounded-full shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Real-time updates active for Goa Trip</span>
+<span class="font-label-sm text-label-sm text-outline pl-1">· Socket #4092</span>
+</div>
+</div>
+<!-- Main Group Title & Quick Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start sm:items-center gap-space-md">
+<!-- Vibrant Group Identity Badge -->
+<div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-on-primary shadow-md shrink-0">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">chrome_maximize</span>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">flight</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight truncate">Goa Trip 2024</h1>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Private ID #GOA-884</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">group</span> 8 members
+              </span>
+<span>•</span>
+<span>Created by <strong class="text-on-surface font-medium">Rahul Verma</strong></span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span> Active since Oct 2024
+              </span>
+<span>•</span>
+<span class="text-secondary font-medium">Baga Beach, North Goa</span>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="h-10 px-space-md bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-space-xs hover:bg-primary transition-all shadow-md active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Add Expense</span>
+</button>
+<button class="h-10 px-space-md bg-secondary-fixed text-on-secondary-fixed-variant rounded-lg font-label-md text-label-md flex items-center gap-space-xs hover:bg-secondary-fixed-dim transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">currency_rupee</span>
+<span>Settle Up</span>
+</button>
+<button class="h-10 px-space-md bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-space-xs hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Manage Members</span>
+</button>
+<!-- Overflow menu button -->
+<div class="relative group">
+<button class="w-10 h-10 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg flex items-center justify-center transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="absolute right-0 top-12 w-48 bg-surface-container-lowest rounded-xl shadow-xl py-1.5 hidden group-hover:block group-focus-within:block z-30 transition-all">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">file_download</span> Export CSV Report
+              </button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">settings</span> Group Settings
+              </button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">share</span> Share Invite Link
+              </button>
+<div class="h-px bg-surface-container-high my-1"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-error hover:bg-error-container/40 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">archive</span> Archive Group
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- KPI Financial Summary Cards (Bento 3-Card Array) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-2">
+<!-- 1. You Owe Card -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Your Share to Settle</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-error bg-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">call_made</span> You Owe
+            </span>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline gap-1">
+<span class="font-currency-display text-currency-display text-error">₹2,450</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">net unpaid</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col gap-1.5 font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-on-surface">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> To Rahul Verma
+              </span>
+<span class="font-currency-md text-currency-md text-on-surface">₹1,600</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> To Priya Sharma
+              </span>
+<span class="font-currency-md text-currency-md text-on-surface">₹850</span>
+</div>
+</div>
+</div>
+<!-- 2. Total Group Spending Card -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Group Spending</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-primary font-label-sm text-label-sm bg-surface-container-high font-medium">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span> 14 Records
+            </span>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline gap-1">
+<span class="font-currency-display text-currency-display text-on-surface">₹48,900</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">INR pooled</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Avg spend per member</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">₹6,112.50</span>
+</div>
+<!-- Mini Sparkline inline visual -->
+<div class="w-24 h-8 flex items-end gap-1">
+<div class="w-3 bg-primary-fixed rounded-t h-3"></div>
+<div class="w-3 bg-primary-fixed rounded-t h-5"></div>
+<div class="w-3 bg-primary-fixed rounded-t h-4"></div>
+<div class="w-3 bg-primary-container rounded-t h-8"></div>
+<div class="w-3 bg-primary-fixed rounded-t h-6"></div>
+<div class="w-3 bg-primary rounded-t h-7"></div>
+</div>
+</div>
+</div>
+<!-- 3. Net Group Position & Status Card -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Net Personal Position</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-secondary font-label-sm text-label-sm bg-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">balance</span> Debt Active
+            </span>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline gap-1">
+<span class="font-currency-display text-currency-display text-error">-₹2,450</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">balance</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-error-container/40 flex items-center gap-space-sm text-on-error-container font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[20px] text-error shrink-0">pending_actions</span>
+<div class="leading-tight">
+<span class="font-medium">2 pending settlements</span> to achieve complete zero debt in this group.
+            </div>
+</div>
+</div>
+</div>
+<!-- Navigation Tabs Pill System -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 mt-2">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-primary font-headline-sm text-headline-sm shadow-sm flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span>Overview</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Expenses</span>
+<span class="px-2 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[11px] font-semibold">14</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+<span>Balances & Debt Graph</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Activity Timeline</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>Members</span>
+<span class="px-2 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[11px] font-semibold">8</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Body Content Workspace -->
+<div class="max-w-7xl mx-auto w-full px-space-xl py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: EXPENSES LIST & CONTROLS (approx 65% = 8 cols) -->
+<section class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Filter Toolbar Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm">
+<!-- Live Search Input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[20px] text-outline pointer-events-none">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" placeholder="Search expenses by title, payer, or tag..." type="text"/>
+</div>
+<!-- Secondary Filters Dropdown Group -->
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<button class="h-10 px-3 bg-surface-container-low hover:bg-surface-container-high rounded-lg text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">tune</span>
+<span>Filters</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="relative">
+<button class="h-10 px-3 bg-surface-container-low hover:bg-surface-container-high rounded-lg text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">swap_vert</span>
+<span>Latest First</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<button class="w-10 h-10 bg-surface-container-low hover:bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" title="Download summary report" type="button">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+</button>
+</div>
+</div>
+<!-- Expenses List Header -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Expenses</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">October 2024</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium cursor-pointer hover:underline">Select multiple to export</span>
+</div>
+<!-- Expense Stream Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- ITEM 1: Fisherman's Wharf Seafood Feast -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low/50 rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<!-- Category Icon Container -->
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">restaurant</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Fisherman's Wharf Seafood Feast</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Unsettled</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-on-surface font-medium">Paid by Rahul Verma</span>
+<span>•</span>
+<span>Oct 28, 2024</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">splitscreen</span> Split equally (6 people)
+                    </span>
+</div>
+</div>
+</div>
+<!-- Amounts & Quick Action Bar -->
+<div class="flex items-center justify-between sm:justify-end gap-space-lg border-t sm:border-t-0 pt-3 sm:pt-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-currency-md text-currency-md text-on-surface font-semibold">₹3,600</span>
+<span class="font-body-sm text-body-sm text-error font-medium">You owe ₹600</span>
+</div>
+<!-- Hover Actions -->
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center justify-center" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center" title="Edit expense" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors flex items-center justify-center" title="Delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ITEM 2: Villa Rental Deposit (LENT MONEY) -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low/50 rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">villa</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Villa Rental Deposit</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">Self Paid</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-tertiary font-medium">Paid by Arjun Mehta (You)</span>
+<span>•</span>
+<span>Oct 26, 2024</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">groups</span> Split equally (8 people)
+                    </span>
+</div>
+</div>
+</div>
+<!-- Amounts & Quick Action Bar -->
+<div class="flex items-center justify-between sm:justify-end gap-space-lg border-t sm:border-t-0 pt-3 sm:pt-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-currency-md text-currency-md text-on-surface font-semibold">₹20,000</span>
+<span class="font-body-sm text-body-sm text-tertiary font-medium">You lent ₹17,500</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center justify-center" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center" title="Edit expense" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors flex items-center justify-center" title="Delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ITEM 3: Self-drive Thar Rental & Fuel -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low/50 rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">directions_car</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Self-drive Thar Rental & Fuel</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Custom Split</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-on-surface font-medium">Paid by Priya Sharma</span>
+<span>•</span>
+<span>Oct 27, 2024</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">tune</span> Rahul, Arjun, Priya, Aman
+                    </span>
+</div>
+</div>
+</div>
+<!-- Amounts & Quick Action Bar -->
+<div class="flex items-center justify-between sm:justify-end gap-space-lg border-t sm:border-t-0 pt-3 sm:pt-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-currency-md text-currency-md text-on-surface font-semibold">₹6,400</span>
+<span class="font-body-sm text-body-sm text-error font-medium">Your share: ₹1,600</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center justify-center" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center" title="Edit expense" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors flex items-center justify-center" title="Delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ITEM 4: Supermarket Snacks & Drinks -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low/50 rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">local_bar</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Supermarket Snacks & Drinks</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Unsettled</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-on-surface font-medium">Paid by Aman Gupta</span>
+<span>•</span>
+<span>Oct 27, 2024</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">splitscreen</span> Split equally (7 people)
+                    </span>
+</div>
+</div>
+</div>
+<!-- Amounts & Quick Action Bar -->
+<div class="flex items-center justify-between sm:justify-end gap-space-lg border-t sm:border-t-0 pt-3 sm:pt-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-currency-md text-currency-md text-on-surface font-semibold">₹2,100</span>
+<span class="font-body-sm text-body-sm text-error font-medium">Your share: ₹300</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center justify-center" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center" title="Edit expense" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors flex items-center justify-center" title="Delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination Controls Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Showing <strong class="text-on-surface">1–4</strong> of <strong class="text-on-surface">14</strong> expenses · Page 1 of 4
+          </span>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-outline cursor-not-allowed font-label-md text-label-md flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<div class="flex items-center gap-1">
+<span class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center font-medium shadow-sm">1</span>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">3</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">4</button>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: SIMPLIFIED SETTLEMENTS & ACTIVE GROUP MEMBERS (35% = 4 cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- CARD 1: Simplified Algorithmic Debt Settlement -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Simplified Debts</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">Min-Flow Algo</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Debts are reduced across the group from 18 bilateral payments down to 3 optimal transactions.
+          </p>
+<!-- Simplified Settlement Actions List -->
+<div class="flex flex-col gap-space-sm pt-1">
+<!-- Settlement Item 1: You owe Rahul -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-semibold">
+                    AM
+                  </div>
+<span class="material-symbols-outlined text-[16px] text-outline">trending_flat</span>
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm font-semibold">
+                    RV
+                  </div>
+</div>
+<span class="font-currency-md text-currency-md text-error font-semibold">₹1,600</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">You owe <strong class="text-on-surface">Rahul Verma</strong></span>
+</div>
+<button class="w-full h-9 bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+<span>Settle ₹1,600 via UPI</span>
+</button>
+</div>
+<!-- Settlement Item 2: You owe Priya -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-semibold">
+                    AM
+                  </div>
+<span class="material-symbols-outlined text-[16px] text-outline">trending_flat</span>
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm font-semibold">
+                    PS
+                  </div>
+</div>
+<span class="font-currency-md text-currency-md text-error font-semibold">₹850</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">You owe <strong class="text-on-surface">Priya Sharma</strong></span>
+</div>
+<button class="w-full h-9 bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+<span>Settle ₹850 via UPI</span>
+</button>
+</div>
+<!-- Settlement Item 3: Aman owes You (Receivable) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm font-semibold">
+                    AG
+                  </div>
+<span class="material-symbols-outlined text-[16px] text-outline">trending_flat</span>
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-semibold">
+                    AM
+                  </div>
+</div>
+<span class="font-currency-md text-currency-md text-tertiary font-semibold">+₹2,500</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant"><strong class="text-on-surface">Aman Gupta</strong> owes you</span>
+</div>
+<button class="w-full h-9 bg-surface-container-lowest hover:bg-surface-container-high text-secondary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Send WhatsApp Reminder</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 2: Active Group Members Ledger (8 Members) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Members & Net Balance</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">8 in group</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Member 1: Arjun Mehta (Current User) -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-9 h-9 rounded-full object-cover shrink-0" data-alt="Close up portrait photograph of young professional Arjun Mehta with warm lighting, neutral modern background, high detail fintech avatar aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwqQ1TquAtgsxmkp1OHnxri7upYi8iCew72gq3xhcP-LtqFUjY1iy2Mo90lYfEj5yq4PyjyAg9cZZch2iI0CDCXXG4XtBujkSiZ2wSt8FsuzhIzC9SL0Ee7QnXU306j5xpa8d5nagisah7kFXrnIZIvdk4fCbxyft1EdK7dZCPMoZPv4m_UJLXj3eGstT-ugOguzojLuFJ48iuLpAs-4Ip1Xdu6HuTjZAjGS3_QpqYrqkuL_OYYyIv"/>
+<div class="flex flex-col truncate">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Arjun Mehta</span>
+<span class="text-[10px] bg-primary/10 text-primary px-1 rounded font-semibold uppercase">You</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">arjun@splitmate.app</span>
+</div>
+</div>
+<span class="font-currency-md text-currency-md text-error shrink-0 font-medium">-₹2,450</span>
+</div>
+<!-- Member 2: Rahul Verma -->
+<div class="p-2.5 rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-9 h-9 rounded-full object-cover shrink-0" data-alt="Portrait of Rahul Verma in casual travel attire smiling, soft sunlight background, natural outdoors, studio clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZz3cxwgsvssQqrKwR2YH81bRXDU9tzK5SyFbkZP1FDlZ9v2lg9ct6xFf_Q5SADDvFFDDznNcBWu07J-6HpMEbuqXBMnW06xBUC7xuOoCwtAf9o9idx72hMe2mBCnDwpkocHdAKFvgedlCRcZBbmq3ACLwSw4RhdwtIozIP7qkfZ1Npy2tC_CsSK2TtElOJSBNLTvskVEG8A72o16Q4JeM6_gtnysm_3B4T_wtbg6QltfmcFsoItYt"/>
+<div class="flex flex-col truncate">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Rahul Verma</span>
+<span class="text-[10px] bg-secondary-fixed text-on-secondary-fixed-variant px-1 rounded font-medium">Admin</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">rahul.v@gmail.com</span>
+</div>
+</div>
+<span class="font-currency-md text-currency-md text-tertiary shrink-0 font-medium">+₹4,200</span>
+</div>
+<!-- Member 3: Priya Sharma -->
+<div class="p-2.5 rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-9 h-9 rounded-full object-cover shrink-0" data-alt="Portrait of Priya Sharma against a minimal modern aesthetic backdrop, friendly expression, natural lighting, high resolution fintech style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQlAZ5EuU9gcp2eWTFWYaTXvfduQAEqvwWUz426PNPBo3SGXb2D2YQ5PqFx3aJqYkNTPeqPGmL-8py7F7n3eehhBD01z-7U4YQm6QxCzxCpSXQs6aHN1J4fjOHA91ZU_L-o89IGNPl4Ih4KRic7wDwgTZRpm86T9kfPMDjlSla6Xwja49mLNrns3vn5TkXMmsKt7ZFwB4Bkf4m3aRNuAXklRCIcHotcQBlAX6CwG3dbbRP4kptqMGg"/>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Priya Sharma</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">priya.sharma@outlook.com</span>
+</div>
+</div>
+<span class="font-currency-md text-currency-md text-tertiary shrink-0 font-medium">+₹3,150</span>
+</div>
+<!-- Member 4: Aman Gupta -->
+<div class="p-2.5 rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-label-md text-label-md font-semibold shrink-0">
+                  AG
+                </div>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Aman Gupta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">aman.g@splitmate.app</span>
+</div>
+</div>
+<span class="font-currency-md text-currency-md text-error shrink-0 font-medium">-₹2,500</span>
+</div>
+<!-- Member 5: Tanvi Roy -->
+<div class="p-2.5 rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-semibold shrink-0">
+                  TR
+                </div>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Tanvi Roy</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">tanvi.roy@gmail.com</span>
+</div>
+</div>
+<span class="font-currency-md text-currency-md text-error shrink-0 font-medium">-₹1,100</span>
+</div>
+<!-- Member 6: Kabir Das -->
+<div class="p-2.5 rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-semibold shrink-0">
+                  KD
+                </div>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Kabir Das</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">kabir.das@icloud.com</span>
+</div>
+</div>
+<span class="font-currency-md text-currency-md text-tertiary shrink-0 font-medium">+₹800</span>
+</div>
+<!-- Member 7: Sneha Rao -->
+<div class="p-2.5 rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-semibold shrink-0">
+                  SR
+                </div>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Sneha Rao</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">sneha.r@gmail.com</span>
+</div>
+</div>
+<span class="font-currency-md text-currency-md text-outline shrink-0 font-medium">₹0.00</span>
+</div>
+<!-- Member 8: Rohan Nair -->
+<div class="p-2.5 rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-semibold shrink-0">
+                  RN
+                </div>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Rohan Nair</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">rohan.n@outlook.com</span>
+</div>
+</div>
+<span class="font-currency-md text-currency-md text-error shrink-0 font-medium">-₹2,100</span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Invite Another Friend</span>
+</button>
+</div>
+<!-- Group Destination Visual Card -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm overflow-hidden flex flex-col gap-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-location="Goa, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbKnXaD-TvikHA2GUj0w4u4lFjV-6_1Kbn3XLKqaLMNMO4mgmkNhZp2xStUPRJXpKFReIyoCnZ-BQjTMWAdtzMDG20MpN3eYS_gXzvYvASpj6YksZJbgZAzWI2GDdI2i8CfPeoQ4NETldQKeFhdtcwAO_3clZNUC0-eVo1iXLV3cKnLCppsRuOcwciW1_dMKNOesItTzyGYwLARQ_bOm7XHq8vOtYcKZBZw3Utelr-T572zWkZo0AY')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-space-md">
+<div class="text-white">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-primary-fixed-dim">Trip Destination</span>
+<h4 class="font-headline-sm text-headline-sm text-white">North Goa Coastal Retreat</h4>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm px-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span> Vagator & Baga
+            </span>
+<span class="font-medium text-on-surface">5 Days remaining</span>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div></main></div></body></html>

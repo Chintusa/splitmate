@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#faf8ff","on-primary":"#ffffff","surface-container-highest":"#dae2fd","on-tertiary-fixed-variant":"#005320","surface-variant":"#dae2fd","surface-dim":"#d2d9f4","on-primary-container":"#a3faef","on-secondary-container":"#fffbff","secondary":"#4b41e1","surface-container-low":"#f2f3ff","secondary-fixed":"#e2dfff","surface-container":"#eaedff","secondary-fixed-dim":"#c3c0ff","outline":"#6e7977","surface-tint":"#006a63","inverse-surface":"#283044","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#62df7d","tertiary":"#005f26","surface-bright":"#faf8ff","tertiary-container":"#007a33","error-container":"#ffdad6","primary-fixed-dim":"#80d5cb","on-surface":"#131b2e","on-secondary-fixed-variant":"#3323cc","on-primary-fixed":"#00201d","inverse-on-surface":"#eef0ff","surface":"#faf8ff","on-tertiary-fixed":"#002109","on-background":"#131b2e","on-error-container":"#93000a","primary-fixed":"#9cf2e8","error":"#ba1a1a","on-secondary":"#ffffff","on-secondary-fixed":"#0f0069","outline-variant":"#bdc9c6","primary":"#005c55","tertiary-fixed":"#7ffc97","primary-container":"#0f766e","secondary-container":"#645efb","on-tertiary-container":"#a1ffad","on-surface-variant":"#3e4947","surface-container-high":"#e2e7ff","on-tertiary":"#ffffff","inverse-primary":"#80d5cb","on-primary-fixed-variant":"#00504a","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-lg":"1.5rem","margin-mobile":"1rem","space-md":"1rem","space-xl":"2rem","margin":"2rem","gutter-mobile":"1rem","gutter":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"body-md":["Geist"],"display-lg":["Geist"],"headline-md":["Geist"],"body-sm":["Geist"],"headline-lg":["Geist"],"body-lg":["Geist"],"label-sm":["Geist"],"headline-sm":["Geist"],"display-lg-mobile":["Geist"],"currency-display":["Geist"],"label-md":["Geist"],"currency-md":["Geist"]},"fontSize":{"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"currency-display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"500"}],"currency-md":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><img alt="SplitMate Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wny46Lu5jKp7s0kVi9YZFCUqZMqBqzm50-NCjlPmteLUVPxEcjewjPfNaiZrxJ2Tm5QMgHGr8LeSrAOTePlt0gtxK1K_sr1xl6L2TdzXPHBSheFCn5aoobFQXndpkLHeJEttDr3aD0cIh8ORHvmPUYCh59MDTCuT6JsXcqq5Ifb0d73P7SlXI1yfDvxU9MxB4hW60VUPlvHEdJ5JDoV34WYf0pvbmUIMyrr90PWLa4Siw4qD_U8xDeoiA"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">SplitMate</span></div><nav class="flex flex-col gap-space-xs px-space-md mt-space-md" data-active-classes="bg-primary-container text-on-primary font-label-md text-label-md rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-label-md text-label-md rounded-lg" data-path="my-groups" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>My Groups</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="activity" href="#"><span class="material-symbols-outlined text-[20px]">bolt</span><span>Activity</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settlements" href="#"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span>Settlements</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="personal-history" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Personal History</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-md m-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm overflow-hidden"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwQK0tCpBdkc5xBO8EetghpVNZDcfhIzS4J0jb-VRPOnc5fVCzesIs-Kb-tOKzj_uWHXUdQhwzTZ_JWiZ80uOMgFyoRdlbO8VGSvWpPbcVa161FH1g8sBhxU6hkjl2ZmJniXZZXugv4uOdue2G9ooNqy8CdmqnjahKgs1Ul4k9pEWGHtwen0lrTATFVavuliwc6R73tt63F8XzXSHHDMpHsHsi-7rR0O-04UlQ47mDysGe3jZ-v1Qe"/><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface truncate">Arjun Mehta</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">arjun@splitmate.app</span></div></div><button class="p-space-xs rounded text-on-surface-variant hover:text-error hover:bg-surface-container-highest transition-colors shrink-0" title="Log out" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm text-on-surface">SplitMate Workspace</span><div class="flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.04)] cursor-help" title="Real-time WebSocket active"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Live</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant pointer-events-none">search</span><input class="h-10 pl-9 pr-12 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-[0_1px_4px_rgba(0,0,0,0.04)] w-64 transition-all" placeholder="Search transactions, groups..." type="text"/><kbd class="absolute right-3 font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded pointer-events-none">⌘K</kbd></div><button class="h-10 px-space-md bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-space-xs hover:bg-primary transition-colors shadow-[0_1px_4px_rgba(0,0,0,0.08)]" type="button"><span class="material-symbols-outlined text-[20px]">add</span><span>Add Expense</span></button><div class="relative"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0 cursor-pointer shadow-[0_1px_4px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwQK0tCpBdkc5xBO8EetghpVNZDcfhIzS4J0jb-VRPOnc5fVCzesIs-Kb-tOKzj_uWHXUdQhwzTZ_JWiZ80uOMgFyoRdlbO8VGSvWpPbcVa161FH1g8sBhxU6hkjl2ZmJniXZZXugv4uOdue2G9ooNqy8CdmqnjahKgs1Ul4k9pEWGHtwen0lrTATFVavuliwc6R73tt63F8XzXSHHDMpHsHsi-7rR0O-04UlQ47mDysGe3jZ-v1Qe"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-xl py-space-xl max-w-[1440px] mx-auto w-full flex flex-col gap-space-xl">
+<!-- Top Header Area with Stats Summary Mosaic -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">folder_shared</span>
+<span class="tracking-wider uppercase font-semibold">Workspace Directory</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant">Live Sync Enabled</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">My Groups</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Collaborative expense groups and shared apartment tabs. Track real-time ledger distributions and instantaneous settlements.
+        </p>
+</div>
+<!-- Actions Stack -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md flex items-center gap-space-xs transition-colors shadow-sm" id="toggle-empty-state-btn">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span id="preview-mode-text">Preview Empty State</span>
+</button>
+<button class="h-10 px-space-lg rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md flex items-center gap-space-xs shadow-md transition-all" id="open-create-modal-btn">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Create Group</span>
+</button>
+</div>
+</div>
+<!-- Quick Ledger High-Level Aggregates Banner -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-4 -translate-y-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Net Position</span>
+<span class="font-currency-display text-currency-display text-tertiary tabular-nums">+₹2,570.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Across 6 active ledger pools</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[26px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between relative overflow-hidden">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">You Are Owed</span>
+<span class="font-currency-display text-currency-display text-tertiary tabular-nums">₹5,820.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">From 3 active member groups</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[26px]">arrow_downward_alt</span>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between relative overflow-hidden">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">You Owe Others</span>
+<span class="font-currency-display text-currency-display text-error tabular-nums">₹3,250.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 groups pending settlement</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-error shrink-0">
+<span class="material-symbols-outlined text-[26px]">arrow_upward_alt</span>
+</div>
+</div>
+</div>
+<!-- Filter Bar & Search Utility -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md flex-1">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-outline pointer-events-none">search</span>
+<input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm transition-all" id="group-search-input" placeholder="Search groups by name or member..." type="text"/>
+</div>
+<!-- Filter Pills Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 sm:pb-0" id="filter-pill-container">
+<button class="filter-pill px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shrink-0 transition-colors shadow-sm" data-filter="all">
+            All Groups (6)
+          </button>
+<button class="filter-pill px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md shrink-0 transition-colors" data-filter="owe">
+            You Owe (2)
+          </button>
+<button class="filter-pill px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md shrink-0 transition-colors" data-filter="owed">
+            Owes You (3)
+          </button>
+<button class="filter-pill px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md shrink-0 transition-colors" data-filter="settled">
+            Settled Up (1)
+          </button>
+</div>
+</div>
+<!-- Sorting Selector -->
+<div class="flex items-center gap-space-sm shrink-0 self-end lg:self-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap" for="sort-dropdown">Sort by:</label>
+<div class="relative">
+<select class="appearance-none h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm cursor-pointer" id="sort-dropdown">
+<option value="recent">Recently Active</option>
+<option value="highest">Highest Balance</option>
+<option value="alpha">Alphabetical</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Groups Grid Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg transition-all duration-300" id="groups-grid">
+<!-- Card 1: Goa Trip 2024 -->
+<div class="group-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden relative" data-balance="2450" data-name="Goa Trip 2024" data-type="owe">
+<!-- Visual Accent Stripe -->
+<div class="h-1.5 w-full bg-error"></div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">luggage</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Goa Trip 2024</h2>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">group</span>
+<span>8 members</span>
+<span>•</span>
+<span>Trip tab</span>
+</div>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Group settings">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Status Highlight Cardlet -->
+<div class="p-space-md rounded-lg bg-error-container/40 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-error-container">Net Balance</span>
+<span class="font-currency-md text-currency-md text-error tabular-nums">You owe ₹2,450</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-error">trending_down</span>
+</div>
+<!-- Activity Log Snippet -->
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+<span class="truncate">Dinner added by Rahul · 12m ago</span>
+</div>
+<!-- Members Avatar Stack -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Warm studio portrait of an Asian woman in navy attire against a soft neutral studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRnYDXDlGtmt9UBRQd720k29CzxWxh8JCsWlOpEaRvsGdY5eRgmV6bg01yEXFY6Y-RBwczmN5ZXccdORN_LWG2ah6N7zJbxueskf9k8bTccsj0-gISn96CQCwUwW7zfCtZsTigRDuCfFF8u1T88ykQLZo5jJuGCZEDnSrnDNBco6MAaKdipxzjsVJwTHCgAf0VjHnZQJCvUgwg-l3M1PfDVO_CWu0Q1YV52AhDKOb_nqzhW2-LLCRq"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Headshot of a smiling young South Asian man with glasses wearing a teal shirt outdoors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRMWMdQd1Tz_sF-r-NGnnsjbiqe_5fD9ZXH4McaTvh1IMS_WHDdYDxvDw5Q8LMgDBYYCE1sdAeEfRRRRYTrrxNiCOvrxPPLxPeiT9DOjkPgr15YDvyxgFFZnH91G1TqUb3sEWJT2LSpi2d83EIjZvaEUPYzv3CfznILl8wrZ881f3dR-i_eW0RI813u2ZinUz5GS6kC5P8eYaUOQmyvSpRHV6UIRpzWJazyqQ7ISJbULh5dNK-sfcL"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of an Indian woman with loose hair smiling cheerfully in an urban cafe setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8vRE_RqrjWx3mAqNXgRrWghOaUZrcMnYHwW9H1uWL2PYRMDbByqgCZjwbpjpozkLfFffeS5WzMIq_h6255y_Ke9k_W1L4xVGGXqYyXy_KCNqLv30dkYpGO5eIx0WSAT0k3E5dQ3cC__UoQZOhCCX5CFrhwbfzuuQ2GBh8XvAad3FjSYIBxJPdAOj_T8K7FWmdPcS1bCaRbyMkQdkvcAq2AXqo8qyoFXhXBeyXSg0iRiar5XeeZyd6"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Close up portrait of an energetic young professional man wearing a dark olive jacket." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB--4Q0A4bN_COziAf6F3DN5xRTxqrSYA0vc5xX2tS8Cvy2WDmYLOqir3ygscpcjBoOfoNMSm8gO8M0TBl80N4zqXbxZDLJWOlGKhDTh-uoIiS66K_fPqykQWTHEbOchLsy-OO4nw1csAjsP0wgVU0CK4z8PFI4ZjplXHWIIruPzwqR4ONjc05mvCcL_ecz61MENVOAkuO9X95gCm5fm3rkpM3avdurs5An7f_YNILJFmNAKxyMTObU"/>
+<div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface ring-2 ring-surface-container-lowest font-label-sm text-label-sm">
+                +4
+              </div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 pending splits</span>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="px-space-lg pb-space-lg pt-0">
+<button class="w-full h-10 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors shadow-sm">
+<span>Open Group Workspace</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Koramangala Flatmates -->
+<div class="group-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden relative" data-balance="1200" data-name="Koramangala Flatmates" data-type="owed">
+<!-- Visual Accent Stripe -->
+<div class="h-1.5 w-full bg-tertiary"></div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">apartment</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Koramangala Flatmates</h2>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">group</span>
+<span>4 members</span>
+<span>•</span>
+<span>Apartment tab</span>
+</div>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Group settings">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Status Highlight Cardlet -->
+<div class="p-space-md rounded-lg bg-on-tertiary-container/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant">Net Balance</span>
+<span class="font-currency-md text-currency-md text-tertiary tabular-nums">You are owed ₹1,200</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-tertiary">trending_up</span>
+</div>
+<!-- Activity Log Snippet -->
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary shrink-0"></span>
+<span class="truncate">Priya settled ₹1,200 · 1h ago</span>
+</div>
+<!-- Members Avatar Stack -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of an Indian woman software architect looking focused with gentle ambient studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsUi_FKmdMeh6wjL_KfDANVuLMDLw0AuPPupnEScq1TlC0k9RAfJInAYtgXkiPUVE3LrctpdueolF0h51bxQaT1lzaPVN6zsgC9h8A7peutjQKPn-gPcRce-9L-wi9M-3ExDSSTmYi3xg-GYlAmiCaNTVeY19hPe1EvVXynamz1ncuo3iZ3fnNRotG6lnTmTB2kJfEnDd8Y9W0aRDN5mWJJ3d-5Q8Yd8Z6vMTslEmNDjgVnwekj7cd"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of a young male designer in minimalist cream-colored sweater in sunlit modern loft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo52UsRHgheomFqE3LxMG8U91r6vpPPtMIfto82Dx0vCNNTtzB53VCr69xng4rLwJhWVgro7e9jOAqbmjcKcLXfkqkwmgZIpW7T7F5Rbbn-INjeqmxyoG-EU1AZszcnr_mqdkp-RXwxuWuqxQxHj9TynZ8FSSShVAftApA1uN2BVkwjyH7zl0-AzFIh53uBwUYABksW6zDTCFQfsxBDYeUX7izv4KAMUJv1lJ7Us4z7B6-cVxaDcjM"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Smiling South Asian young woman with short stylish hair wearing mustard linen top." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5dPdCag8hbQgiKuNX3jAxc3mdYbJfbXOfv2-prKUYN6zyHmI2HN-wTvB0TtCAopOrsbuc1CQt0Q8waDiGwdm0vh0gTtXOyyTtN3UIsU8iY9df1OIoBYgbIV4wOHht3P0YZbiT2fG4urTMIdTZ4Iu8Hgv6OUCU5KJ9r1evZJ0O5oNhYILw748s4kDfkWNMHuVnB-fgPBgF_0vri3g3OMFvsO68q0jroXLynVAXJyE2hpVD-Ailp_5j"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Corporate headshot of an Indian male founder in casual indigo collared shirt against neutral grey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVfay_tXcss225kUXTZp9EUt-NuWH62T5fJVcVi0z4YSP-Sda7XDsGkSYfXhG00S1kKNlgxOMUrdTrayM4uTjXLeJYEENUbc9pjwFkJfSzj1LzDzrJSZAXmzphmaNkAJ50ZEL7dXecut8aV-MvHjZ16lMi-FHcmQqAsluQ6Zv9ORcK6tbGZvUf7hjOaqh9oUdqHu3p4utpGah2ALd107wxmviL6xygvEdRfHdyYSJ8rAeyVmYLtalt"/>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Rent up to date</span>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="px-space-lg pb-space-lg pt-0">
+<button class="w-full h-10 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors shadow-sm">
+<span>Open Group Workspace</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3: College Reunion & Trip -->
+<div class="group-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden relative" data-balance="0" data-name="College Reunion & Trip" data-type="settled">
+<!-- Visual Accent Stripe -->
+<div class="h-1.5 w-full bg-outline-variant"></div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">school</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1 group-hover:text-primary transition-colors">College Reunion & Trip</h2>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">group</span>
+<span>6 members</span>
+<span>•</span>
+<span>Vacation tab</span>
+</div>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Group settings">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Status Highlight Cardlet -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Net Balance</span>
+<span class="font-currency-md text-currency-md text-on-surface tabular-nums">Settled Up (₹0.00)</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-tertiary">check_circle</span>
+</div>
+<!-- Activity Log Snippet -->
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline-variant shrink-0"></span>
+<span class="truncate">All balances cleared · 3 days ago</span>
+</div>
+<!-- Members Avatar Stack -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of an Indian engineer smiling in a sunny outdoor park setting with crisp lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHXXTH1KajBThd6btkSBQ2f25kR71FQb6ZhjVYbbDQCXXjF3j45V2gKCm7wChs-kWzCJ9wYXyNj8BMujsdQ3L3thgCHaE1tk3nfa-0mzaMYVfzrg_865BUqk3Kf8yje56fOrgpV1ihDLYNdmrL-cGUBmgncSSoOY48f2HXNT-ZIkNsBSOqgeEV5koZ-30osYNTK3lkuB_qcNl4hDPBNGW8ur0ZlOlzv1py9XH39HQ9Bzw3Kz7gLFtD"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Smiling young woman with round glasses and yellow sweater against clean minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAc6aO16sIUu-M-2yzRXEAAxmosUfB5YNNn2bGoRF47LZwC_75LBcfgaYB0W8YyJLspxL0tIoIfMs13lbw0IBO8ZvOlcqrKvDFdFPEeTIVMpmaXiILQme7XqT7RN07eB-2Oipd-scPOSGNteXRTPa3HuYRwhd4m_5__t-RptdZBh_W1Hkssqglu2iZzat5aKDTmms-HV4GKHgZklOUAQ_veGpCSzV6uyQp2mqjGSmv6dpv3G_GTubl"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Headshot portrait of a man in late twenties wearing tech company charcoal zip fleece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSDbVAuC8YIHS8gZsJNV1BE7UY-1lyR6r7kK99jXu0y96Vhi7ir7cFf1-H9g9AzR_v5dV_4IKXojeaCELEov7zTbPzC6LawVvZ5Uv0jnWLRQtDhFUl7IjN35kEwZYS8C7ZzYpp3G9piDqXnkiCSKbmpkGgat5-2mB-YJNpVLFKd7MdnB8RqBPjUbTy2yq_hFo3cm8aQDJYBJskGWUnMB6CGUm6rJG14836C29Fsf6Bjl0goHjQHNiI"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of an upbeat college alumna holding notebooks in a university corridor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtX39YWf3uHJvITzm6dqGQ9mBDQbmIwnkh0fwjPsb73SXODwg17Isnw0WgPiQJxSzhck-b57CcZnd3aX-KGyl0w3K5CMKgxNesoXpxgwGcDnsakG6swvB9BuOhWXbcY8lfFZkuDN8lwCLEc1sPuMl6qrsUqLpqivuvQIplRV6RMvfLZpX2GNbA1bCddoyjBICPsiTa3GNe8_nok8UN41dN4BYgSlmGnwe0dKvQIyQi8JTy0VKPa40A"/>
+<div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface ring-2 ring-surface-container-lowest font-label-sm text-label-sm">
+                +2
+              </div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Archived view</span>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="px-space-lg pb-space-lg pt-0">
+<button class="w-full h-10 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors shadow-sm">
+<span>Open Group Workspace</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Weekend Hackathon & Food -->
+<div class="group-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden relative" data-balance="3770" data-name="Weekend Hackathon & Food" data-type="owed">
+<!-- Visual Accent Stripe -->
+<div class="h-1.5 w-full bg-tertiary"></div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-secondary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">laptop_mac</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Weekend Hackathon & Food</h2>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">group</span>
+<span>3 members</span>
+<span>•</span>
+<span>Project tab</span>
+</div>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Group settings">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Status Highlight Cardlet -->
+<div class="p-space-md rounded-lg bg-on-tertiary-container/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant">Net Balance</span>
+<span class="font-currency-md text-currency-md text-tertiary tabular-nums">You are owed ₹3,770</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-tertiary">trending_up</span>
+</div>
+<!-- Activity Log Snippet -->
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary shrink-0"></span>
+<span class="truncate">Cloud hosting invoice added · Yesterday</span>
+</div>
+<!-- Members Avatar Stack -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of an Indian developer wearing headphones seated in a co-working technology incubator space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3N-YSnEQ6ueK7D-pS3vzkJWQSWPfEMRvMLOuKPhAU3gqwdab1uRGeqFqNCFgITNSK3-w97nW_b5bLuxYIgibhvJSE1BqibsD-tAJ8Ozqqa4BLj2cxSzwpE8BZnvImftV1Yxw0iDLe4lVYDQSvjXhZqmWKD6n9al78KSVWb2xMaNvcVCOG2kfF5RsLuKo974j62LlZ-1XySorhbDijCOwtT9Ao0FknpBWiS75oi8Pmg2TbAD_pRC0C"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Profile photo of a woman programmer with tied hair concentrating on a code sprint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHzsdbLBZL5nOt8KYB2ye3x1xhJbADcCBK-pvwt5VAhN3NmRZKouFpDLL4vY0Ot7cIwmSbT_pCC7-EY6p26YhPyGbfo2mt9OWZvyL9ie3fuAakXLHP90OJPdhutKaq3gEWi6At29o86neUpvmis-o2m5iu6ha6HfoSlvuB0ozu9Nj29PssmiZ0ZAFNtFh7s70zehPdrbnGXcqnUzfcpJqDOookXWM2aipkzxcIZzN-heNc7nGf68qG"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Young South Asian product designer with modern haircut smiling warmly in ambient creative studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACLUiUj6a4Fm1jazT1sVc2OjoPxhDnBv2Sbl7VFh1MN1lMImXIEXBFSGHY91glzsgmuES7xMJIXSdpXlPfTBf7EOosNenc8oMtLBzwDIdvZYBUUK9aNQhhY1Ah5B4u2y-QjUdW515LSmBgpA_RVl5Pr4v23Lyz15PY5a-bkeojCz18E3J3TodXXgkHyZbLkwOeBWB3Yunat5_TG09pJZaw_x6sxSn4AvmxN0nJu28EUEbcfIPm2XUP"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 invoices pending</span>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="px-space-lg pb-space-lg pt-0">
+<button class="w-full h-10 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors shadow-sm">
+<span>Open Group Workspace</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 5: Diwali Party & Gifts -->
+<div class="group-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden relative" data-balance="800" data-name="Diwali Party & Gifts" data-type="owe">
+<!-- Visual Accent Stripe -->
+<div class="h-1.5 w-full bg-error"></div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">featured_seasonal_and_gifts</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Diwali Party & Gifts</h2>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">group</span>
+<span>5 members</span>
+<span>•</span>
+<span>Celebration tab</span>
+</div>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Group settings">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Status Highlight Cardlet -->
+<div class="p-space-md rounded-lg bg-error-container/40 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-error-container">Net Balance</span>
+<span class="font-currency-md text-currency-md text-error tabular-nums">You owe ₹800</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-error">trending_down</span>
+</div>
+<!-- Activity Log Snippet -->
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+<span class="truncate">Decorations added by Neha · 4 days ago</span>
+</div>
+<!-- Members Avatar Stack -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of an Indian woman dressed in cheerful festive pastel kurta laughing naturally." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ8vTFTzwHrcniRVkLOG4j165TKZAAQlP9MvmYRHg5seOlJ_LGYrCXvQ5X5wHI-_yAgdO8ypN5y1r-aE2-PN1IJVVLERp6DICTGf1xsCTbI1UrVbc5WvMoU9ZdjR2K4cTAR4LGWmRgkg--p6aTdS85M1Giz6dnhXTXJ5GVhvvY01bv1SdfhC4m5XnbRUtVe74vA0ASe_VleTm1W04bRv6AFiNq893RiwB3-mSnwsiU4NqM4l46AhGL"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Man in festive Indian ethnic Nehru jacket smiling against warm glowing festival lamps." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALaUGiWJ4iS2MXinJOFJDamArI6StVqczjyuW47I3Z1zIkd6GxFinH13mi93_o23Dfz3rMmeKSZTI-EAEO_GnNsvxCqpsJqNk2lqFoX68lZWUjFtTyfVndIdoCxpfb6LK663lPgdrlj0Le99Vs03BfSAJZ0IxVxrLuiik9JunvPYHJJtgzpbZ2_YkQ5VsprATSd95Gm8o9gN4_aZJjpotNkImUKwY2g-PEXsdDGjM8ELypi_IMuMCB"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="South Asian female student smiling warmly at a Diwali dinner celebration event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_XAYRxzN2LqKSfVMV07K2dsxaQLfNAJM4qsxAPUNR9dsuFYXFL8knrzXiEYGt-DgAca0uv5BSLosvjGRyRQ6_pytgQdDZa9ic_FhyWV-GdqEPKnqmDmgy76xUI_8ePpTbUoUdaASTnHdkk5HHSA3Xmmhd7w33HZEH1sNMdfgKHQph9RVRDTc1kPdC_784fl_NyltRbpOGE1dr62QXGFkimOWwmz0tFqjK_S67fCcJdIx4yW8JX6qC"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of a young Indian professional smiling outdoors with golden hour light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLKm32u_NElVC0eKzIPFyygDMAXnMUJOCN_auYYwOPGhD8lYqTbrKldq6khGpP_3VT-QJeGLdVKuCXZMWj6AD4Et0DA1ey7tBWQnYU60-4BOD1vXwbGxbOKMzjIyDMdh0Y8O7_oP5wn9QvE-wByd9lRdm06xynp3AsK3HKm_QetHL6KXkhVUNS1WisVFwfgAB_OH_zkPqmCVQ2gS3Brld207jhIV9lydeM0LszhKUayoQciVI9qZlo"/>
+<div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface ring-2 ring-surface-container-lowest font-label-sm text-label-sm">
+                +1
+              </div>
+</div>
+<span class="font-label-sm text-label-sm text-error font-medium">Settle prompt</span>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="px-space-lg pb-space-lg pt-0">
+<button class="w-full h-10 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors shadow-sm">
+<span>Open Group Workspace</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 6: Daily Office Lunches -->
+<div class="group-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden relative" data-balance="850" data-name="Daily Office Lunches" data-type="owed">
+<!-- Visual Accent Stripe -->
+<div class="h-1.5 w-full bg-tertiary"></div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">restaurant</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Daily Office Lunches</h2>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">group</span>
+<span>7 members</span>
+<span>•</span>
+<span>Recurring lunch pool</span>
+</div>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Group settings">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Status Highlight Cardlet -->
+<div class="p-space-md rounded-lg bg-on-tertiary-container/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant">Net Balance</span>
+<span class="font-currency-md text-currency-md text-tertiary tabular-nums">You are owed ₹850</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-tertiary">trending_up</span>
+</div>
+<!-- Activity Log Snippet -->
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+<span class="truncate">Biryani split added · 5 days ago</span>
+</div>
+<!-- Members Avatar Stack -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of an Indian coworker smiling in a contemporary tech cafeteria." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCTWcHwxD0iQF--fFTXREv8R4WvGT5HMf9oQ8pt5QFWfUZ7WIPj1k4dfyWmNO2TCEv6VPAbYsmJ-9VkKBI-H2IMVKEFKSe9S2gXDAwzWoMRPqbYcVgtCKbhon5fWSRV2UanlFdSTvD_dy8vtq0YwLm6I8ZmazFm-8JHjoZym9LiSYsZ6V34bwxUFU9okaNhWbefKxFjX2GtFe1_hsV4XAI8e9LAHAUkDLi3IWd_Rl0TJPoHf6e4Wso"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Young Indian product analyst enjoying coffee in modern office lounge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAnF_g1bYEf8D0593BHHWbFVU8lY_1pqgHdJmDYeEREcVQKsaDKSK1FnhR6Pcrk-FHFMyljMFMwpjwNhUQqNvLWJS7Qb-5yW9QoRYMaL6Ph3DurB3aTgqfglIQFiIh_cETUwe8d4d5iJA9OVtIPaCpSpCJLKUHNHQeFttYwwn4DL7LfqoS05Po73dbg_B2R7CrU68P5xC-biVzB9puQcTvT2Qg-NUzgeWV4vbwHnjTRcXe2X5pDJhQ"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Female team member with laptop taking lunch break in rooftop corporate canteen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlMAXNre3AD8mre0yj1XoRCXx3JcP9smqOG3kYjw1kbaim2z98w6yjR9d_4ngut8LBAu5q740Tg9GJMuHpM0B_isCDq1SI6DmwTjiluv22_Yb55jROim1nV0OFk2SauBZBe68xz825mQJ-8S4yZepBpC5gEm1h2MuLOXY4TkCaUCpElxnXs4khiD_z-gEWdFsPCk13at9-A61t83oKqSlWBMjlMW4cM4z84_Z4V4-5JaoIqQE1nqat"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait of an operations associate smiling enthusiastically in office setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp607y13cCQh7vDN6JWV50eylcEiW8yAy_KJmg2yJwhk815QT5KilzW_AaJLv5ELEN_SHVGlHkUUBLX3H5yODgLE0iDcwuuhA14KV0e6bQKpNk1mfHuicYzNOInapETHApkCA7_JTa1APPuJ-oBwNbinMZFoXRuunBIWUCGjIfCuRSAsiPI8fvCwX--KkPmE9j98ax8NI0t2nJVGxLa2tGaSdd26AsVqT8MvRq0lBiP-aEvBBDVS_l"/>
+<div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface ring-2 ring-surface-container-lowest font-label-sm text-label-sm">
+                +3
+              </div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Weekly cycle</span>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="px-space-lg pb-space-lg pt-0">
+<button class="w-full h-10 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors shadow-sm">
+<span>Open Group Workspace</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty State Representation (Toggled via JS or empty search) -->
+<div class="hidden flex-col items-center justify-center py-20 px-space-md text-center bg-surface-container-lowest rounded-xl shadow-sm" id="empty-state-view">
+<div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center text-outline mb-space-md">
+<span class="material-symbols-outlined text-[40px]">groups_3</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-xs">No groups found</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-lg">
+        No groups found matching your search. Create a new group to start splitting bills and tracking expenses together.
+      </p>
+<button class="h-10 px-space-lg rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md flex items-center gap-space-xs shadow-md transition-all" id="empty-state-create-btn">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Create a New Group</span>
+</button>
+</div>
+<!-- Floating Quick Helper Drawer / Modal (Hidden by default) -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-sm flex items-center justify-center p-space-md transition-opacity" id="quick-create-modal">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col transition-transform">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[22px] text-primary">add_circle</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Quick Create Group</span>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="close-modal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Form Body -->
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface">Group Name</label>
+<input class="h-10 px-3 rounded-lg bg-surface text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="e.g. Manali Ski Trip, Flat 402" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface">Category</label>
+<div class="grid grid-cols-3 gap-space-xs">
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">flight</span>
+<span>Trip</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">home</span>
+<span>Home</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">celebration</span>
+<span>Event</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface">Add Members (Email or phone)</label>
+<input class="h-10 px-3 rounded-lg bg-surface text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="rahul@example.com, priya@work.co" type="text"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Separate multiple contacts with commas</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface">Default Currency</label>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between font-label-md text-label-md text-on-surface">
+<span>Indian Rupee (₹ INR)</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">lock</span>
+</div>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-end gap-space-sm">
+<button class="h-10 px-space-md rounded-lg bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors shadow-sm" id="cancel-modal-btn">
+            Cancel
+          </button>
+<button class="h-10 px-space-lg rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md flex items-center gap-space-xs shadow-md transition-all" id="submit-create-group-btn">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Create Group</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple Filter and Search Micro-Interactions
+  const searchInput = document.getElementById('group-search-input');
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const groupCards = document.querySelectorAll('.group-card');
+  const emptyStateView = document.getElementById('empty-state-view');
+  const groupsGrid = document.getElementById('groups-grid');
+  const toggleEmptyStateBtn = document.getElementById('toggle-empty-state-btn');
+  const previewModeText = document.getElementById('preview-mode-text');
+  const sortDropdown = document.getElementById('sort-dropdown');
+
+  let activeFilter = 'all';
+  let isPreviewEmptyForced = false;
+
+  function filterCards() {
+    if (isPreviewEmptyForced) {
+      groupsGrid.classList.add('hidden');
+      emptyStateView.classList.remove('hidden');
+      emptyStateView.classList.add('flex');
+      return;
+    }
+
+    const query = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    groupCards.forEach(card => {
+      const name = card.getAttribute('data-name').toLowerCase();
+      const type = card.getAttribute('data-type');
+      
+      const matchesSearch = name.includes(query);
+      const matchesFilter = (activeFilter === 'all') || (activeFilter === type);
+
+      if (matchesSearch && matchesFilter) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (visibleCount === 0) {
+      groupsGrid.classList.add('hidden');
+      emptyStateView.classList.remove('hidden');
+      emptyStateView.classList.add('flex');
+    } else {
+      groupsGrid.classList.remove('hidden');
+      emptyStateView.classList.add('hidden');
+      emptyStateView.classList.remove('flex');
+    }
+  }
+
+  // Filter Pill Click Handlers
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => {
+        p.className = 'filter-pill px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md shrink-0 transition-colors';
+      });
+      pill.className = 'filter-pill px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shrink-0 transition-colors shadow-sm';
+      activeFilter = pill.getAttribute('data-filter');
+      isPreviewEmptyForced = false;
+      previewModeText.textContent = "Preview Empty State";
+      filterCards();
+    });
+  });
+
+  searchInput.addEventListener('input', () => {
+    isPreviewEmptyForced = false;
+    previewModeText.textContent = "Preview Empty State";
+    filterCards();
+  });
+
+  // Toggle Empty State for preview
+  toggleEmptyStateBtn.addEventListener('click', () => {
+    isPreviewEmptyForced = !isPreviewEmptyForced;
+    if (isPreviewEmptyForced) {
+      previewModeText.textContent = "Show Active Grid";
+      groupsGrid.classList.add('hidden');
+      emptyStateView.classList.remove('hidden');
+      emptyStateView.classList.add('flex');
+    } else {
+      previewModeText.textContent = "Preview Empty State";
+      filterCards();
+    }
+  });
+
+  // Modal interactions
+  const openModalBtn = document.getElementById('open-create-modal-btn');
+  const emptyStateCreateBtn = document.getElementById('empty-state-create-btn');
+  const closeModalBtn = document.getElementById('close-modal-btn');
+  const cancelModalBtn = document.getElementById('cancel-modal-btn');
+  const createModal = document.getElementById('quick-create-modal');
+  const submitCreateGroupBtn = document.getElementById('submit-create-group-btn');
+
+  function openModal() {
+    createModal.classList.remove('hidden');
+  }
+
+  function closeModal() {
+    createModal.classList.add('hidden');
+  }
+
+  openModalBtn.addEventListener('click', openModal);
+  emptyStateCreateBtn.addEventListener('click', openModal);
+  closeModalBtn.addEventListener('click', closeModal);
+  cancelModalBtn.addEventListener('click', closeModal);
+
+  submitCreateGroupBtn.addEventListener('click', () => {
+    closeModal();
+    // Reset back to active view if previewing empty
+    isPreviewEmptyForced = false;
+    previewModeText.textContent = "Preview Empty State";
+    searchInput.value = '';
+    activeFilter = 'all';
+    filterPills[0].click();
+  });
+
+  // Simple client-side sorting
+  sortDropdown.addEventListener('change', (e) => {
+    const sortVal = e.target.value;
+    const cardsArray = Array.from(groupCards);
+
+    cardsArray.sort((a, b) => {
+      if (sortVal === 'alpha') {
+        return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+      } else if (sortVal === 'highest') {
+        return parseInt(b.getAttribute('data-balance')) - parseInt(a.getAttribute('data-balance'));
+      }
+      return 0; // default order
+    });
+
+    cardsArray.forEach(card => groupsGrid.appendChild(card));
+  });
+</script></main></div></body></html>

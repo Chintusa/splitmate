@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"error-container":"#ffdad6","inverse-on-surface":"#eef0ff","surface-container-lowest":"#ffffff","background":"#faf8ff","secondary":"#4b41e1","on-surface":"#131b2e","on-secondary":"#ffffff","on-surface-variant":"#3e4947","on-error":"#ffffff","on-background":"#131b2e","surface":"#faf8ff","surface-container-low":"#f2f3ff","primary":"#005c55","on-tertiary-fixed":"#002109","on-tertiary-container":"#a1ffad","primary-container":"#0f766e","inverse-surface":"#283044","on-primary-fixed-variant":"#00504a","secondary-fixed":"#e2dfff","tertiary-fixed":"#7ffc97","surface-container-high":"#e2e7ff","primary-fixed-dim":"#80d5cb","surface-variant":"#dae2fd","primary-fixed":"#9cf2e8","outline":"#6e7977","secondary-fixed-dim":"#c3c0ff","on-primary-fixed":"#00201d","on-tertiary-fixed-variant":"#005320","error":"#ba1a1a","tertiary-container":"#007a33","outline-variant":"#bdc9c6","on-primary":"#ffffff","on-secondary-fixed-variant":"#3323cc","tertiary-fixed-dim":"#62df7d","surface-bright":"#faf8ff","surface-container":"#eaedff","secondary-container":"#645efb","on-tertiary":"#ffffff","on-secondary-fixed":"#0f0069","surface-tint":"#006a63","surface-dim":"#d2d9f4","tertiary":"#005f26","surface-container-highest":"#dae2fd","on-primary-container":"#a3faef","on-error-container":"#93000a","on-secondary-container":"#fffbff","inverse-primary":"#80d5cb"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","margin":"2rem","space-xl":"2rem","gutter":"1.5rem","space-md":"1rem","space-sm":"0.5rem","margin-mobile":"1rem"},"fontFamily":{"body-md":["Geist"],"display-lg-mobile":["Geist"],"currency-md":["Geist"],"currency-display":["Geist"],"display-lg":["Geist"],"body-lg":["Geist"],"label-md":["Geist"],"headline-md":["Geist"],"headline-sm":["Geist"],"body-sm":["Geist"],"headline-lg":["Geist"],"label-sm":["Geist"]},"fontSize":{"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"currency-md":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"currency-display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0f766e
+- Font: geist
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V8Muk4Z-Bzx2illvQnHxeZ8cNaT2Ub1eLA8Vf56JOChYNik1QroVx9qHudd6r4SugjORXmwNfofSro18z3L5k62pwBBOAVzO2kRPb9spN93pOYUe6nqPSrHp2EpfyqpzOgq_L-iCuN3omFmv79pAvj8NXv3FPSCJlW8pbPpbuzh9xK6L4EStGQgCx46TJU-mrSAIP_hA0e8hTE2I01yptkLxbNFbufsawnUp_-d_AMTpInT6b8lQ_SuA"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">SplitMate</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary-container font-semibold"><a aria-current="page" class="transition-colors text-primary-container font-semibold" data-path="landing-page" href="#">Features</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="product-preview" href="#">Product Preview</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="use-cases" href="#">Use Cases</a></nav><div class="flex items-center gap-space-md"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors px-space-sm py-space-xs" data-path="login" href="#">Log in</a><a class="bg-primary-container text-on-primary font-label-md text-label-md px-space-md py-space-sm rounded-lg hover:bg-primary transition-colors shadow-sm" data-path="signup" href="#">Get Started Free</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden pb-space-xl pt-space-lg">
+<!-- Subtle Ambient Glow -->
+<div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[720px] h-[480px] bg-primary-fixed/30 rounded-full blur-[120px] opacity-70"></div>
+<div class="pointer-events-none absolute top-72 -left-20 w-96 h-96 bg-secondary-fixed/40 rounded-full blur-[100px] opacity-60"></div>
+<div class="relative max-w-7xl mx-auto px-margin flex flex-col items-center text-center">
+<!-- FinTech Announcement Pill -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface shadow-sm mb-space-lg">
+<span class="text-[14px]">✨</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">The Modern Splitwise Alternative for FinTech Teams & Friends</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_forward</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-lg text-display-lg md:text-[54px] md:leading-[62px] text-on-surface tracking-tight max-w-4xl mx-auto font-semibold">
+        Split expenses without the <span class="text-primary-container">spreadsheet chaos.</span>
+</h1>
+<!-- Supporting Subtitle -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-space-md leading-relaxed">
+        SplitMate makes shared expenses simple. Create groups, split bills, track balances, and settle up — all in one place with real-time sync and zero mental math.
+      </p>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap items-center justify-center gap-space-md mt-space-xl">
+<a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary font-label-md text-label-md px-space-lg py-3 rounded-lg hover:bg-primary shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5" data-path="signup" href="#">
+<span>Get Started Free</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-space-xs bg-surface-container-lowest text-on-surface font-label-md text-label-md px-space-lg py-3 rounded-lg hover:bg-surface-container-low shadow-sm transition-all" href="#how-it-works">
+<span class="material-symbols-outlined text-primary text-[20px]">play_circle</span>
+<span>See how it works</span>
+</a>
+</div>
+<!-- Social Proof Strip -->
+<div class="flex items-center justify-center gap-space-sm mt-space-lg text-on-surface-variant">
+<div class="flex items-center text-amber-500 text-[14px] tracking-tighter">
+          ★★★★★
+        </div>
+<p class="font-body-sm text-body-sm font-medium">
+<span class="font-semibold text-on-surface">4.9/5</span> from 42,000+ active flatmates, travelers, and event organizers · <span class="text-primary-container font-medium">No credit card required</span>
+</p>
+</div>
+<!-- Interactive High-Fidelity App Mockup Container -->
+<div class="relative w-full max-w-5xl mt-space-xl pt-space-xs">
+<!-- Floating Callout Pill: Left -->
+<div class="hidden lg:flex absolute -left-6 top-24 z-20 items-center gap-space-xs bg-surface-container-lowest text-on-surface px-space-md py-2.5 rounded-full shadow-xl border border-surface-container-high animate-bounce" style="animation-duration: 3.5s;">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-semibold tracking-tight">⚡ Min-Flow Algorithm: Reduces 18 transfers to 3</span>
+</div>
+<!-- Floating Callout Pill: Right Top -->
+<div class="hidden lg:flex absolute -right-4 top-16 z-20 items-center gap-space-xs bg-surface-container-lowest text-on-surface px-space-md py-2.5 rounded-full shadow-xl border border-surface-container-high">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-tight">🔔 Real-time WebSocket sync</span>
+</div>
+<!-- Floating Callout Pill: Right Bottom -->
+<div class="hidden lg:flex absolute -right-6 bottom-16 z-20 items-center gap-space-xs bg-surface-container-lowest text-on-surface px-space-md py-2.5 rounded-full shadow-xl border border-surface-container-high">
+<span class="material-symbols-outlined text-primary-container text-[18px]">qr_code_scanner</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-tight">📱 Instant UPI / QR settlement</span>
+</div>
+<!-- Glass / Structured Browser Mockup Shell -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-2xl overflow-hidden text-left border border-surface-container-high/60">
+<!-- Mockup Title Bar -->
+<div class="bg-surface-container-low px-space-md py-3 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-rose-400"></span>
+<span class="w-3 h-3 rounded-full bg-amber-400"></span>
+<span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+</div>
+<div class="h-4 w-px bg-outline-variant/40 ml-2"></div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-container">groups</span>
+<span class="font-label-sm text-label-sm font-semibold">SplitMate Workspace · Goa Trip 2024</span>
+</div>
+</div>
+<!-- Sync Tag & Action Tools -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-2.5 py-1 rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold text-tertiary">Live</span>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant">
+<span class="font-body-sm text-body-sm">8 Members</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm">INR (₹)</span>
+</div>
+</div>
+</div>
+<!-- Mockup Top Financial Summary Metric Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-surface-container-high p-px">
+<div class="bg-surface-container-lowest p-space-md flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Total Balance</span>
+<span class="font-currency-display text-currency-display text-tertiary mt-1 tabular-nums">+₹3,370</span>
+<span class="font-body-sm text-body-sm text-tertiary font-medium">You are in overall credit</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">You Owe</span>
+<span class="font-currency-display text-currency-display text-error mt-1 tabular-nums">₹2,450</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Across 2 friends</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">You Are Owed</span>
+<span class="font-currency-display text-currency-display text-tertiary mt-1 tabular-nums">₹5,820</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">From 3 friends</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Active Groups</span>
+<span class="font-currency-display text-currency-display text-on-surface mt-1 tabular-nums">6</span>
+<span class="font-body-sm text-body-sm text-primary-container font-medium">3 Pending Settlements</span>
+</div>
+</div>
+<!-- Mockup Interior Split Layout: Activity & Settlement -->
+<div class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg bg-surface-container-lowest">
+<!-- Left Column: Recent Shared Expenses (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary-container">receipt_long</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Expenses</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold cursor-pointer hover:underline">+ Add Bill</span>
+</div>
+<!-- Item 1 -->
+<div class="p-space-sm rounded-lg bg-surface hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center flex-shrink-0 text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<div class="truncate">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Fisherman's Wharf Seafood Feast</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Paid by <span class="font-medium text-on-surface">You</span> · Split with 4</p>
+</div>
+</div>
+<div class="text-right flex-shrink-0 pl-space-sm">
+<span class="font-currency-md text-currency-md text-on-surface block tabular-nums">₹3,600</span>
+<span class="font-body-sm text-body-sm text-tertiary font-semibold">+₹2,700 you lent</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-space-sm rounded-lg bg-surface hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[20px]">villa</span>
+</div>
+<div class="truncate">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Villa Rental Deposit (Anjuna)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Paid by <span class="font-medium text-on-surface">Aman</span> · Split equally (8)</p>
+</div>
+</div>
+<div class="text-right flex-shrink-0 pl-space-sm">
+<span class="font-currency-md text-currency-md text-on-surface block tabular-nums">₹20,000</span>
+<span class="font-body-sm text-body-sm text-error font-semibold">-₹2,500 your share</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-space-sm rounded-lg bg-surface hover:bg-surface-container-low transition-colors flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed-dim flex items-center justify-center flex-shrink-0 text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+</div>
+<div class="truncate">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Self-drive Thar Rental (4 Days)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Paid by <span class="font-medium text-on-surface">You</span> · Split with 4</p>
+</div>
+</div>
+<div class="text-right flex-shrink-0 pl-space-sm">
+<span class="font-currency-md text-currency-md text-on-surface block tabular-nums">₹6,400</span>
+<span class="font-body-sm text-body-sm text-tertiary font-semibold">+₹4,800 you lent</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Simplified Settlement Box (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-sm bg-surface p-space-md rounded-xl">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">payments</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Simplified Debts</h3>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-secondary px-2 py-0.5 rounded-full font-semibold">Min-Flow Active</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Settle Item 1 -->
+<div class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-[11px]">RV</span>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Rahul Verma</p>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary font-medium pl-7.5">owes you ₹1,600</span>
+</div>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-1">
+<span>Remind</span>
+<span class="material-symbols-outlined text-[14px]">send</span>
+</button>
+</div>
+<!-- Settle Item 2 -->
+<div class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center font-bold text-[11px]">PS</span>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Priya Sharma</p>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary font-medium pl-7.5">owes you ₹850</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2.5 py-1 rounded">Pending</span>
+</div>
+<!-- Settle Item 3 -->
+<div class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold text-[11px]">AK</span>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Aman Kapoor</p>
+</div>
+<span class="font-body-sm text-body-sm text-error font-medium pl-7.5">you owe ₹1,450</span>
+</div>
+<button class="bg-surface-container-highest hover:bg-surface-dim text-on-surface font-label-sm text-label-sm px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1">
+<span>Settle UPI</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+<!-- Quick Mini Tip -->
+<div class="mt-space-xs p-2 bg-secondary-fixed/40 rounded-lg flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span class="font-body-sm text-body-sm">3 direct payments resolve all 8 group balances.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TRUST & VALUE HIGHLIGHT STRIP -->
+<section class="w-full bg-surface-container-lowest shadow-sm py-space-xl my-space-md">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<div class="flex items-start gap-space-sm p-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Simple Expense Splitting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-normal">Equal, custom, and percentage splits calculated in under 3 seconds.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">sync</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Real-Time Balance Updates</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-normal">Instant sync via WebSockets across iOS, Android, and Web clients.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">balance</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Clear Settlement Tracking</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-normal">One-tap UPI & instant bank receipts with zero ambiguity or guesswork.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Built for Groups & Trips</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-normal">Multi-currency exchange engine, itemized tax, and complete audit timeline.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS (3-Step Workflow) -->
+<section class="w-full py-space-xl" id="how-it-works">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-semibold">Workflow Engine</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[36px] md:leading-[44px] text-on-surface font-semibold mt-1">
+          Settle up in three effortless steps
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Engineered for effortless social finances. No calculations to defend, no awkward reminders to write.
+        </p>
+</div>
+<!-- 3 Steps Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-8 h-8 rounded-full bg-surface-container-high text-primary-container font-bold text-[14px] flex items-center justify-center">01</span>
+<span class="material-symbols-outlined text-primary-container text-[24px]">group_add</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-xs">Create a group</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Set up an apartment tab, vacation trip, or dinner squad. Invite friends with a simple invite link or email in seconds.
+            </p>
+</div>
+<!-- Micro-Preview Badge -->
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Goa Trip 2024 · 8 members joined</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary font-bold text-[14px] flex items-center justify-center">02</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">receipt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-xs">Add shared expenses</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Snap a bill, choose who paid, and split equally or customize exact shares. SplitMate validates every rupee automatically.
+            </p>
+</div>
+<!-- Micro-Preview Badge -->
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Dinner ₹2,400 split equally</span>
+<span class="font-label-sm text-label-sm text-primary-container font-bold">₹600/person</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold text-[14px] flex items-center justify-center">03</span>
+<span class="material-symbols-outlined text-tertiary text-[24px]">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-xs">Settle balances</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Our debt simplification algorithm cuts unnecessary transfers down to the bare minimum. Pay directly via UPI with a single tap.
+            </p>
+</div>
+<!-- Micro-Preview Badge -->
+<div class="mt-space-lg pt-space-md bg-tertiary-fixed/30 p-space-sm rounded-lg flex items-center gap-space-xs text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">✓ Rahul settled ₹1,600 via GPay</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE FEATURES (6-Card Grid) -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header -->
+<div class="max-w-3xl mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-semibold">Engineering Precision</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[34px] md:leading-[42px] text-on-surface font-semibold mt-1">
+          Designed for precision, clarity, and peace of mind
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Built from the ground up for zero ambiguity, mathematically guaranteed ledger balancing, and social peace of mind.
+        </p>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-[26px]">receipt_long</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Shared Expenses</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Record and split expenses with your group with itemized receipts and tax breakdowns. Attach photo bills for unquestioned clarity.
+          </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[26px]">tune</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Smart Splitting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Split equally, assign exact rupee amounts, or use dynamic percentages with visual discrepancy warnings if figures don't sum to 100%.
+          </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary mb-space-md">
+<span class="material-symbols-outlined text-[26px]">account_balance_wallet</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Live Balances</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            See who owes whom instantly with clear color-coded indicators. Never guess your financial position or balance totals again.
+          </p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[26px]">payments</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Easy Settlements</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Record payments, integrate direct UPI transfers, and keep ledgers accurate without awkward follow-ups or lingering debts.
+          </p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-[26px]">history_edu</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Activity Timeline</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Audit trail of every edit, settlement, and new receipt. Full accountability and complete transparency for every member in the group.
+          </p>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[26px]">bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Real-Time Updates</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Powered by WebSocket connectivity. Everyone sees changes instantaneously without refreshing or maintaining duplicate spreadsheets.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- DEEP DIVE PRODUCT PREVIEW / INTERACTIVE SHOWCASE -->
+<section class="w-full py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="bg-surface-container-lowest p-space-lg md:p-space-xl rounded-2xl shadow-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg pb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Product Showcase</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold mt-1">Deep-dive into the SplitMate console</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Switch perspectives to see how real-time simplification eliminates friction.</p>
+</div>
+<!-- Interactive Tab Controls -->
+<div class="flex flex-wrap items-center gap-1.5 p-1 bg-surface-container-low rounded-lg" id="demo-tabs">
+<button class="px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-on-surface shadow-sm transition-all" id="tab-btn-dashboard" onclick="switchTab('dashboard')">
+              Dashboard View
+            </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-all" id="tab-btn-workspace" onclick="switchTab('workspace')">
+              Group Workspace
+            </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-all" id="tab-btn-minflow" onclick="switchTab('minflow')">
+              Min-Flow Settlement
+            </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-all" id="tab-btn-audit" onclick="switchTab('audit')">
+              Audit Timeline
+            </button>
+</div>
+</div>
+<!-- Showcase Mockup Window -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left 8 cols: Dynamic Mockup Display -->
+<div class="lg:col-span-8 bg-surface-container-low rounded-xl p-space-md md:p-space-lg">
+<div class="flex flex-col gap-space-md" id="tab-content">
+<!-- Default Content: Dashboard View -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Workspace</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Flat #402 · Indiranagar</h3>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed/40 px-2 py-0.5 rounded font-semibold">Settled this month: ₹18,400</span>
+</div>
+</div>
+<!-- Mini Data Visualization: Expense Categories -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Monthly Spend Distribution</span>
+<span class="font-currency-md text-currency-md font-bold text-on-surface tabular-nums">Total: ₹42,850</span>
+</div>
+<!-- Category Segment Bar Chart (Inline SVG) -->
+<div class="w-full">
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full" style="width: 48%;" title="Rent & Maintenance (48%)"></div>
+<div class="bg-secondary h-full" style="width: 24%;" title="Groceries & Essentials (24%)"></div>
+<div class="bg-tertiary h-full" style="width: 18%;" title="Utilities & Wi-Fi (18%)"></div>
+<div class="bg-amber-400 h-full" style="width: 10%;" title="Weekend Outings (10%)"></div>
+</div>
+<div class="flex flex-wrap items-center gap-space-md mt-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rent (48%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Groceries (24%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Utilities (18%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Other (10%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Counterparty Debt List with instant WhatsApp & UPI triggers -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Immediate Action Ledger</span>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-[12px]">KS</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Kavita S. (Flatmate)</p>
+<span class="font-body-sm text-body-sm text-tertiary font-medium">owes you ₹1,200 for Wi-Fi & Milk</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-2.5 py-1.5 rounded-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-tertiary">chat</span>
+<span class="hidden sm:inline">WhatsApp</span>
+</button>
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm px-3 py-1.5 rounded-md font-medium hover:bg-primary shadow-sm">
+                      Settle
+                    </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center font-bold text-[12px]">DK</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Deepak Kumar</p>
+<span class="font-body-sm text-body-sm text-error font-medium">you owe ₹2,450 for Maid & Cook salary</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm px-3 py-1.5 rounded-md font-medium hover:bg-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+<span>Pay UPI</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 4 cols: Highlights & Micro-Annotations -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-xl">
+<span class="font-label-sm text-label-sm text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+                Where you owe most
+              </span>
+<h4 class="font-headline-md text-headline-md text-on-surface font-bold mt-1">Goa Trip 2024</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                You owe ₹2,450 to Aman for the Villa Deposit. Settle before Friday to close out the trip tab.
+              </p>
+<div class="mt-space-sm">
+<span class="font-label-sm text-label-sm bg-surface-container-lowest px-2.5 py-1 rounded-full text-on-surface font-semibold shadow-sm inline-block">
+                  Auto-calculates net balance
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                Live Audit Trail
+              </span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Instant Confirmations</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Both parties receive instant notification upon payment marking. Discrepancies are flagged mathematically.
+              </p>
+</div>
+<div class="bg-primary-container text-on-primary p-space-md rounded-xl shadow-md">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Bank Grade Security</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">
+                Zero credential storage. UPI payments execute safely on your favorite payment application with end-to-end encryption.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- USE CASES SECTION -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-semibold">Universal Applicability</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[34px] md:leading-[42px] text-on-surface font-semibold mt-1">
+          Built for every shared moment
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Whether you're splitting international flights or daily chai rounds, SplitMate adapts to the dynamic of your group.
+        </p>
+</div>
+<!-- 3 Rich Scenario Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Scenario 1: Trips -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<div class="h-48 w-full bg-cover bg-center" data-alt="A scenic aerial photography of friends on an adventurous coastal road trip with a vintage open vehicle parked near emerald ocean waters under golden afternoon light, crisp minimalism." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxIwi4-pl5IBvGAtI2ZHIsYDkmIiPKJkK7B33cxZ-VoPOYiffPpjTCzqRpnIGBeZE5znz0fFhm3tN4BqfuAJpHFXZuUdzHWhQD2AU8041FfEu7O8JsgtnRjuEE7oCpmK9R1kRbHNyo1U1LISaJmgJdr3Ts-8WIbn-r_kFCAZnYt0zjodjKDtZ5egljwTH5LeWnixTsbuBmGT6r3SwHxXTUblD4hod3OIppz8-U2l8cKKTZfBUlnixo')"></div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-0.5 rounded-full text-on-surface font-label-sm text-label-sm font-semibold mb-space-xs">
+<span>✈️</span> Trips & Vacations
+              </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mt-1">Holidays, Roadtrips & Treks</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                Split hotels, transport, shared villas, activities, and dining without holding onto crumpled paper receipts. Perfect for weekend getaways and international travel with real-time multi-currency conversions.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Multi-currency support</span>
+<span class="font-semibold text-primary-container">Offline ready →</span>
+</div>
+</div>
+</div>
+<!-- Scenario 2: Flatmates -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<div class="h-48 w-full bg-cover bg-center" data-alt="Modern sunlit Scandinavian living room and kitchen showing contemporary urban apartment architecture with clean wooden dining table and plants, high editorial polish." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApRmeH32OzknF67CZnHE-DNJ0fLjTTyZRQxdVLhJmvA10tyRjlcaIDrRjjk_9UrMK4jMLB7Erck27KxPJYOe0h6r9EABj869oceYVYrEWi6ahY4V-d3i9lRBnf1VjiToN9IG3DzTtHmsBCPzqtjbhTWzeAeXNcfSm17gol1NkfYLme8TMOaUNKl_6N7JKzpF45ETGAK-E-wsQUjkUmi8mqREyF1Mb0SS0QFFdXv4FbCwVYH9UrZsae')"></div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-0.5 rounded-full text-on-surface font-label-sm text-label-sm font-semibold mb-space-xs">
+<span>🏠</span> Flatmates & Roommates
+              </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mt-1">Shared Apartments & Rent</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                Track recurring rent, Wi-Fi bills, groceries, cooking gas, and household maintenance with monthly rollover summaries. Never leave utility disputes unresolved or let one person carry all upfront costs.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Monthly rollover tab</span>
+<span class="font-semibold text-primary-container">Recurring bills →</span>
+</div>
+</div>
+</div>
+<!-- Scenario 3: Events -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<div class="h-48 w-full bg-cover bg-center" data-alt="A warm atmospheric dinner table with artisanal gourmet food plates, stylish glassware, ambient restaurant string lighting, and friends toasting drinks in joy, editorial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwZsePX3Ztu35dINKGbev9QF6L03sJHxpaoL9Fh4g9KfwhxIQi4X4LyvZh7PC2rmm3iJeDldyLdpluf__Jiz6zdYRxDZAOOdpG_nRBHciV9yrV3B4rRbGIW6nZSCKwCN-XTEqbc6WT8wxOWtpXfLizaS_NW4u_uddHZ1d26fab_cI44v8Tsx2u3q5E7LY8Sb5TMzUcZJrXBFJQtsvr3CjvP3aBd-lQvYxqQJRd7ekfLis8wCL2TOn0')"></div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-0.5 rounded-full text-on-surface font-label-sm text-label-sm font-semibold mb-space-xs">
+<span>🎉</span> Friends & Dinners
+              </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mt-1">Dinners, Parties & Gifting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                Keep night-outs, parties, festival celebrations, and group birthday gifts organized without awkward calculation arguments at the restaurant table. Settle UPI bills immediately while still seated.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Itemized bill splits</span>
+<span class="font-semibold text-primary-container">Zero math →</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPARISON / BENEFIT HIGHLIGHT -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-5xl mx-auto px-margin">
+<div class="text-center max-w-xl mx-auto mb-space-xl">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">The SplitMate Advantage</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[32px] md:leading-[40px] text-on-surface font-semibold mt-1">
+          Why switch from messy spreadsheets or legacy apps?
+        </h2>
+</div>
+<!-- Comparison Matrix Card -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-lg overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<!-- Column 1: Spreadsheets / Legacy -->
+<div class="p-space-lg md:p-space-xl bg-surface-container-lowest/60 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-error">
+<span class="material-symbols-outlined text-[24px]">cancel</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Spreadsheets & Legacy Apps</h3>
+</div>
+<ul class="flex flex-col gap-space-md font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px] flex-shrink-0 mt-0.5">close</span>
+<span>Broken formulas, accidental cell overwrites, and zero input validation.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px] flex-shrink-0 mt-0.5">close</span>
+<span>Unnecessary complex web of 15+ circular transfers between group members.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px] flex-shrink-0 mt-0.5">close</span>
+<span>Awkward manual reminder messages on WhatsApp asking people to pay back.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px] flex-shrink-0 mt-0.5">close</span>
+<span>No direct mobile payment links, requiring manual account detail lookups.</span>
+</li>
+</ul>
+</div>
+<!-- Column 2: SplitMate -->
+<div class="p-space-lg md:p-space-xl bg-primary-fixed/20 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">SplitMate Platform</h3>
+</div>
+<ul class="flex flex-col gap-space-md font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px] flex-shrink-0 mt-0.5">check</span>
+<span><strong>Instant Min-Flow Reduction:</strong> Turns dozens of micro-debts into 2-3 direct payments.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px] flex-shrink-0 mt-0.5">check</span>
+<span><strong>Live WebSocket Sync:</strong> Real-time balances updated across all devices immediately.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px] flex-shrink-0 mt-0.5">check</span>
+<span><strong>Direct UPI Settlements:</strong> One-tap QR & app links without typing UPI IDs manually.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px] flex-shrink-0 mt-0.5">check</span>
+<span><strong>Full Ledger Audit Trail:</strong> Timestamped history of every edit and repayment.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CALL TO ACTION (CTA BANNER) -->
+<section class="w-full py-space-xl my-space-md">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Deep Emerald Card -->
+<div class="relative bg-primary-container text-on-primary rounded-2xl p-space-xl md:p-16 overflow-hidden shadow-2xl flex flex-col items-center text-center">
+<!-- Subtle Pattern Backdrop -->
+<div class="pointer-events-none absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="pointer-events-none absolute -bottom-24 -right-24 w-80 h-80 bg-primary-fixed rounded-full blur-[80px] opacity-30"></div>
+<div class="relative z-10 max-w-3xl flex flex-col items-center">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-on-primary/10 text-on-primary font-label-sm text-label-sm font-semibold mb-space-md">
+<span>✨</span> No more money awkwardness
+          </div>
+<h2 class="font-display-lg text-display-lg md:text-[44px] md:leading-[52px] font-semibold tracking-tight text-on-primary">
+            Ready to simplify shared expenses?
+          </h2>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-xl mx-auto mt-space-sm leading-relaxed">
+            Join over 40,000+ groups splitting expenses effortlessly. Get started in less than 30 seconds with complete peace of mind.
+          </p>
+<div class="flex flex-wrap items-center justify-center gap-space-md mt-space-xl">
+<a class="bg-surface-container-lowest text-primary-container font-label-md text-label-md font-semibold px-space-lg py-3 rounded-lg hover:bg-surface-bright shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-space-xs" data-path="signup" href="#">
+<span>Create Free Account</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="border border-on-primary/30 text-on-primary font-label-md text-label-md font-semibold px-space-lg py-3 rounded-lg hover:bg-on-primary/10 transition-colors" data-path="product-preview" href="#">
+              Explore Live Demo
+            </a>
+</div>
+<span class="font-body-sm text-body-sm text-on-primary-container/80 mt-space-md">
+            Free forever for personal groups · No credit card required · Instant setup
+          </span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Simple Interactive Tab Handler for Deep Dive Showcase -->
+<script>
+  function switchTab(tabKey) {
+    const tabs = ['dashboard', 'workspace', 'minflow', 'audit'];
+    tabs.forEach(key => {
+      const btn = document.getElementById('tab-btn-' + key);
+      if (btn) {
+        if (key === tabKey) {
+          btn.className = 'px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-on-surface shadow-sm transition-all';
+        } else {
+          btn.className = 'px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-all';
+        }
+      }
+    });
+
+    const contentContainer = document.getElementById('tab-content');
+    if (!contentContainer) return;
+
+    if (tabKey === 'dashboard') {
+      contentContainer.innerHTML = `
+        <div class="flex items-center justify-between bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+          <div>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Active Workspace</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Flat #402 · Indiranagar</h3>
+          </div>
+          <div class="text-right">
+            <span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed/40 px-2 py-0.5 rounded font-semibold">Settled this month: ₹18,400</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <span class="font-label-sm text-label-sm font-semibold text-on-surface">Monthly Spend Distribution</span>
+            <span class="font-currency-md text-currency-md font-bold text-on-surface tabular-nums">Total: ₹42,850</span>
+          </div>
+          <div class="w-full">
+            <div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden flex">
+              <div class="bg-primary-container h-full" style="width: 48%;"></div>
+              <div class="bg-secondary h-full" style="width: 24%;"></div>
+              <div class="bg-tertiary h-full" style="width: 18%;"></div>
+              <div class="bg-amber-400 h-full" style="width: 10%;"></div>
+            </div>
+            <div class="flex flex-wrap items-center gap-space-md mt-2">
+              <span class="font-body-sm text-body-sm text-on-surface-variant">● Rent (48%)</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">● Groceries (24%)</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">● Utilities (18%)</span>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (tabKey === 'workspace') {
+      contentContainer.innerHTML = `
+        <div class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm">
+          <div class="flex items-center justify-between mb-space-sm">
+            <span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Trip Roster & Member Status</span>
+            <span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded">6 Active Members</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between p-2 rounded bg-surface">
+              <span class="font-body-md text-body-md text-on-surface font-medium">Aman Kapoor</span>
+              <span class="font-label-sm text-label-sm text-tertiary font-semibold">+₹4,200 (Paid for Airbnb)</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded bg-surface">
+              <span class="font-body-md text-body-md text-on-surface font-medium">Rohan Gupta</span>
+              <span class="font-label-sm text-label-sm text-error font-semibold">-₹1,800 (Owes for Meals)</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded bg-surface">
+              <span class="font-body-md text-body-md text-on-surface font-medium">Sneha Patil</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">₹0 (All Settled)</span>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (tabKey === 'minflow') {
+      contentContainer.innerHTML = `
+        <div class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm">
+          <div class="flex items-center gap-2 mb-2 text-secondary">
+            <span class="material-symbols-outlined">auto_fix_high</span>
+            <span class="font-headline-sm text-headline-sm font-semibold">Graph-Based Debt Simplification</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Original graph had 14 independent cross-debts. Min-Flow collapsed them into 3 net payments:</p>
+          <div class="flex flex-col gap-2">
+            <div class="p-2.5 bg-surface rounded-lg flex items-center justify-between">
+              <span class="font-body-sm text-body-sm text-on-surface font-medium">Aman → Rahul (₹2,100)</span>
+              <span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded">Optimized</span>
+            </div>
+            <div class="p-2.5 bg-surface rounded-lg flex items-center justify-between">
+              <span class="font-body-sm text-body-sm text-on-surface font-medium">Priya → You (₹1,450)</span>
+              <span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded">Optimized</span>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (tabKey === 'audit') {
+      contentContainer.innerHTML = `
+        <div class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm">
+          <span class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-2 block">Immutable Ledger Logs</span>
+          <div class="flex flex-col gap-2 text-on-surface-variant">
+            <div class="text-[13px] border-l-2 border-primary pl-2 py-0.5">
+              <span class="font-bold text-on-surface">12:42 PM:</span> Aman marked ₹1,600 received from Rahul via Google Pay UPI.
+            </div>
+            <div class="text-[13px] border-l-2 border-secondary pl-2 py-0.5">
+              <span class="font-bold text-on-surface">11:15 AM:</span> You edited split share for "Fuel Tanker" from equal to custom ₹1,400.
+            </div>
+            <div class="text-[13px] border-l-2 border-tertiary pl-2 py-0.5">
+              <span class="font-bold text-on-surface">Yesterday:</span> Group "Goa Trip 2024" created by You.
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="max-w-7xl mx-auto px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl pb-space-lg"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0f766e
+- Font: geist
+- Mode: light
+- Roundness: rounded-md
+" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V8Muk4Z-Bzx2illvQnHxeZ8cNaT2Ub1eLA8Vf56JOChYNik1QroVx9qHudd6r4SugjORXmwNfofSro18z3L5k62pwBBOAVzO2kRPb9spN93pOYUe6nqPSrHp2EpfyqpzOgq_L-iCuN3omFmv79pAvj8NXv3FPSCJlW8pbPpbuzh9xK6L4EStGQgCx46TJU-mrSAIP_hA0e8hTE2I01yptkLxbNFbufsawnUp_-d_AMTpInT6b8lQ_SuA"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">SplitMate</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">The precision collaborative expense and debt settlement platform built to eliminate friction around group finances.</p></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Product</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="landing-page" href="#">Features</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">Smart Split Engine</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="product-preview" href="#">Live Settlement</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="use-cases" href="#">Group Travel</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Resources & Legal</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="security" href="#">Security & Compliance</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Connect</span><div class="flex items-center gap-space-sm"><a class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">alternate_email</span></a><a class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">forum</span></a></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Real-time multi-currency settlement powered by Swiss fintech standards.</p></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 SplitMate Technologies Inc. All rights reserved.</p><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">All systems operational</span></div></div></div></footer></body></html>

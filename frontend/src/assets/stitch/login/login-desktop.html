@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SplitMate — Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#F0FDFA',
+              100: '#CCFBF1',
+              200: '#99F6E4',
+              500: '#14B8A6',
+              600: '#0D9488',
+              700: '#0F766E', // Primary Emerald
+              800: '#115E59', // Primary Hover
+              900: '#134E4A',
+            },
+            app: {
+              bg: '#F8FAFC',
+              card: '#FFFFFF',
+              border: '#E2E8F0',
+              textPrimary: '#0F172A',
+              textSecondary: '#475569',
+              textMuted: '#64748B',
+            },
+            fin: {
+              positive: '#16A34A',
+              positiveBg: '#F0FDF4',
+              negative: '#DC2626',
+              negativeBg: '#FEF2F2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .tabular-nums { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="font-sans antialiased text-app-textPrimary bg-app-bg min-h-screen flex flex-col justify-between selection:bg-brand-100 selection:text-brand-900">
+
+  <!-- Main Grid Wrapper -->
+  <div class="min-h-screen flex flex-col lg:flex-row w-full">
+    
+    <!-- LEFT PANEL (45% on desktop): Brand & Miniature Dashboard Showcase -->
+    <div class="hidden lg:flex lg:w-[45%] bg-[#0F766E] text-white flex-col justify-between p-12 relative overflow-hidden shadow-2xl">
+      <!-- Background subtle geometry & texture -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(204,251,241,0.18),rgba(255,255,255,0))] pointer-events-none"></div>
+      <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-brand-800 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+      
+      <!-- Top Branding -->
+      <div class="relative z-10 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-inner">
+            <svg class="w-6 h-6 text-brand-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="flex items-baseline">
+            <span class="text-2xl font-bold tracking-tight text-white">Split</span>
+            <span class="text-2xl font-bold tracking-tight text-brand-200">Mate</span>
+          </div>
+        </div>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-brand-100 border border-white/15 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Live Sync Engine
+        </span>
+      </div>
+
+      <!-- Mid Content: Headline & Miniature Dashboard Preview -->
+      <div class="relative z-10 my-auto py-8">
+        <div class="max-w-md">
+          <h1 class="text-4xl font-extrabold tracking-tight text-white leading-tight">
+            Split expenses.<br>
+            <span class="text-brand-200">Stay even.</span>
+          </h1>
+          <p class="mt-3 text-brand-100 text-sm leading-relaxed text-opacity-90">
+            Manage shared expenses, track balances, and settle up with your group — without the spreadsheet chaos.
+          </p>
+        </div>
+
+        <!-- Miniature Dashboard Preview Card (Realistic SplitMate UI) -->
+        <div class="mt-8 bg-white/95 text-slate-800 rounded-2xl p-5 shadow-2xl backdrop-blur border border-white/40 transform transition-all duration-300 hover:scale-[1.01]">
+          <!-- Mini Header -->
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <span class="text-xs font-semibold text-slate-700 uppercase tracking-wider">Live Workspace · Goa Trip 2024</span>
+            </div>
+            <span class="text-[11px] font-medium text-slate-400">8 Members</span>
+          </div>
+
+          <!-- Mini KPI Row -->
+          <div class="grid grid-cols-3 gap-2.5 mt-3">
+            <div class="bg-red-50/70 border border-red-100 rounded-xl p-2.5">
+              <div class="text-[10px] font-semibold text-red-600 uppercase tracking-wide">You Owe</div>
+              <div class="text-base font-bold text-red-700 tabular-nums mt-0.5">₹2,450</div>
+              <div class="text-[9px] text-red-500 mt-0.5 font-medium">2 pending</div>
+            </div>
+            <div class="bg-emerald-50/70 border border-emerald-100 rounded-xl p-2.5">
+              <div class="text-[10px] font-semibold text-emerald-600 uppercase tracking-wide">You're Owed</div>
+              <div class="text-base font-bold text-emerald-700 tabular-nums mt-0.5">₹5,820</div>
+              <div class="text-[9px] text-emerald-500 mt-0.5 font-medium">3 members</div>
+            </div>
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-2.5">
+              <div class="text-[10px] font-semibold text-slate-500 uppercase tracking-wide">Net Position</div>
+              <div class="text-base font-bold text-emerald-600 tabular-nums mt-0.5">+₹3,370</div>
+              <div class="text-[9px] text-slate-400 mt-0.5 font-medium">All balanced</div>
+            </div>
+          </div>
+
+          <!-- Who Owes Whom & Recent Expense Snip -->
+          <div class="mt-3.5 space-y-2">
+            <!-- Counterparty Row -->
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50/80 border border-slate-100/80">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-brand-100 text-brand-800 text-[10px] font-bold flex items-center justify-center">
+                  RV
+                </div>
+                <div class="text-left">
+                  <div class="text-xs font-semibold text-slate-800 leading-none">Rahul Verma</div>
+                  <div class="text-[10px] text-slate-400">Dinner at Fisherman's Wharf</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-bold text-red-600 tabular-nums">-₹1,600</span>
+                <span class="block text-[9px] text-slate-400">You owe</span>
+              </div>
+            </div>
+
+            <!-- Second Counterparty Row -->
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50/80 border border-slate-100/80">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold flex items-center justify-center">
+                  PS
+                </div>
+                <div class="text-left">
+                  <div class="text-xs font-semibold text-slate-800 leading-none">Priya Sharma</div>
+                  <div class="text-[10px] text-slate-400">Villa Rental Share</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-bold text-emerald-600 tabular-nums">+₹1,200</span>
+                <span class="block text-[9px] text-slate-400">Owes you</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Metric Strip -->
+        <div class="mt-6 flex items-center gap-6 text-xs text-brand-100/80 font-medium">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <span>Min-Flow Debt Algo</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <span>Instant UPI & QR Settle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left Bottom Statement -->
+      <div class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-brand-200">
+        <span class="font-medium tracking-wide uppercase text-[11px] text-brand-100/90">Simple. Transparent. Real-time.</span>
+        <span class="text-white/50">v2.4 Production</span>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL (55% on desktop): Login Form Card -->
+    <div class="flex-1 flex flex-col justify-between p-6 sm:p-10 lg:p-16 bg-white overflow-y-auto">
+      
+      <!-- Top Bar on Right (Mobile Brand & Quick Switch) -->
+      <div class="flex items-center justify-between w-full max-w-md mx-auto">
+        <div class="flex items-center gap-2 lg:hidden">
+          <img src="https://lh3.googleusercontent.com/aida/AEtjO1V8Muk4Z-Bzx2illvQnHxeZ8cNaT2Ub1eLA8Vf56JOChYNik1QroVx9qHudd6r4SugjORXmwNfofSro18z3L5k62pwBBOAVzO2kRPb9spN93pOYUe6nqPSrHp2EpfyqpzOgq_L-iCuN3omFmv79pAvj8NXv3FPSCJlW8pbPpbuzh9xK6L4EStGQgCx46TJU-mrSAIP_hA0e8hTE2I01yptkLxbNFbufsawnUp_-d_AMTpInT6b8lQ_SuA" alt="SplitMate Logo" class="h-7 w-auto object-contain">
+        </div>
+        <div class="ml-auto text-xs text-app-textSecondary font-medium">
+          New to SplitMate? 
+          <a href="#" class="text-brand-700 hover:text-brand-800 font-semibold transition ml-1 underline decoration-brand-700/30 underline-offset-4">Create an account</a>
+        </div>
+      </div>
+
+      <!-- Main Login Container -->
+      <div class="w-full max-w-md mx-auto my-auto py-8">
+        
+        <!-- Header -->
+        <div class="mb-8">
+          <div class="hidden lg:inline-flex items-center gap-2 mb-4">
+            <img src="https://lh3.googleusercontent.com/aida/AEtjO1V8Muk4Z-Bzx2illvQnHxeZ8cNaT2Ub1eLA8Vf56JOChYNik1QroVx9qHudd6r4SugjORXmwNfofSro18z3L5k62pwBBOAVzO2kRPb9spN93pOYUe6nqPSrHp2EpfyqpzOgq_L-iCuN3omFmv79pAvj8NXv3FPSCJlW8pbPpbuzh9xK6L4EStGQgCx46TJU-mrSAIP_hA0e8hTE2I01yptkLxbNFbufsawnUp_-d_AMTpInT6b8lQ_SuA" alt="SplitMate Logo" class="h-8 w-auto object-contain">
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-app-textPrimary">Welcome back</h2>
+          <p class="mt-2 text-sm text-app-textSecondary">
+            Sign in to continue to your SplitMate shared workspace.
+          </p>
+        </div>
+
+        <!-- Global Alert Notice (Demonstrating authentication state handling) -->
+        <div id="authAlert" class="hidden mb-5 p-3.5 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3 text-sm text-red-800">
+          <svg class="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" stroke-width="2"/>
+            <path stroke-width="2" stroke-linecap="round" d="M12 8v4m0 4h.01"/>
+          </svg>
+          <div>
+            <span class="font-semibold" id="authAlertTitle">Invalid credentials.</span>
+            <p class="text-xs text-red-700 mt-0.5" id="authAlertDesc">Email or password is incorrect. Please verify and try again.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Form -->
+        <form id="loginForm" class="space-y-4" onsubmit="event.preventDefault(); simulateSignIn();">
+          
+          <!-- Email Field -->
+          <div>
+            <label for="email" class="block text-xs font-semibold text-app-textPrimary mb-1.5 uppercase tracking-wider">
+              Email address <span class="text-red-500">*</span>
+            </label>
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.206"/>
+                </svg>
+              </div>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                value="arjun@splitmate.app" 
+                placeholder="name@company.com" 
+                class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-app-border text-sm text-app-textPrimary placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-700/20 focus:border-brand-700 transition"
+                required
+              />
+            </div>
+            <!-- Inline validation message slot -->
+            <p id="emailError" class="hidden mt-1.5 text-xs text-red-600 flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+              <span>Please enter a valid email address.</span>
+            </p>
+          </div>
+
+          <!-- Password Field -->
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <label for="password" class="block text-xs font-semibold text-app-textPrimary uppercase tracking-wider">
+                Password <span class="text-red-500">*</span>
+              </label>
+              <a href="#" class="text-xs font-medium text-brand-700 hover:text-brand-800 transition">
+                Forgot password?
+              </a>
+            </div>
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+              </div>
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                value="••••••••••••" 
+                placeholder="Enter your password" 
+                class="w-full pl-10 pr-11 py-2.5 rounded-xl border border-app-border text-sm text-app-textPrimary placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-700/20 focus:border-brand-700 transition"
+                required
+              />
+              <button 
+                type="button" 
+                onclick="togglePasswordVisibility()" 
+                class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none"
+                aria-label="Toggle password visibility"
+              >
+                <svg id="eyeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <!-- Inline validation message slot -->
+            <p id="passwordError" class="hidden mt-1.5 text-xs text-red-600 flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+              <span>Password must be at least 8 characters.</span>
+            </p>
+          </div>
+
+          <!-- Remember Me Checkbox -->
+          <div class="flex items-center pt-1">
+            <input 
+              id="remember_me" 
+              name="remember_me" 
+              type="checkbox" 
+              checked
+              class="h-4 w-4 rounded border-slate-300 text-brand-700 focus:ring-brand-700/20"
+            />
+            <label for="remember_me" class="ml-2 block text-xs text-app-textSecondary cursor-pointer select-none">
+              Remember me for 30 days
+            </label>
+          </div>
+
+          <!-- Primary Submit Button -->
+          <div class="pt-2">
+            <button 
+              type="submit" 
+              id="submitBtn" 
+              class="w-full flex items-center justify-center py-2.5 px-4 rounded-xl text-sm font-semibold text-white bg-brand-700 hover:bg-brand-800 active:bg-brand-900 focus:outline-none focus:ring-4 focus:ring-brand-700/25 shadow-sm shadow-brand-700/20 transition-all duration-150 disabled:opacity-75 disabled:cursor-not-allowed"
+            >
+              <span id="btnText">Sign In</span>
+              <!-- Spinner (hidden by default) -->
+              <svg id="btnSpinner" class="hidden animate-spin ml-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Or continue with divider -->
+        <div class="relative my-6">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-app-border"></div>
+          </div>
+          <div class="relative flex justify-center text-xs uppercase">
+            <span class="bg-white px-3 text-slate-400 font-medium">Or continue with</span>
+          </div>
+        </div>
+
+        <!-- Google Single Sign-On -->
+        <button 
+          type="button" 
+          onclick="simulateGoogleSSO()"
+          class="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-app-border bg-white hover:bg-slate-50 text-sm font-medium text-app-textPrimary transition shadow-sm"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span>Continue with Google</span>
+        </button>
+
+        <!-- Quick Interactive State Previews (For QA & Interview Demo) -->
+        <div class="mt-8 p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-xs">
+          <div class="flex items-center justify-between text-slate-500 font-medium mb-2">
+            <span>Interview State Preview:</span>
+            <span class="text-[10px] text-slate-400">Click to test errors</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <button onclick="setAuthErrorState()" class="px-2 py-1 rounded bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-[11px] font-medium transition">
+              Auth Error
+            </button>
+            <button onclick="setEmailErrorState()" class="px-2 py-1 rounded bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-[11px] font-medium transition">
+              Invalid Email
+            </button>
+            <button onclick="resetDefaultState()" class="px-2 py-1 rounded bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-[11px] font-medium transition">
+              Reset Default
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Info -->
+      <div class="w-full max-w-md mx-auto text-center text-xs text-slate-400 pt-4 border-t border-slate-100">
+        <p>© 2024 SplitMate Inc. All rights reserved. Encrypted with 256-bit TLS.</p>
+        <div class="flex justify-center gap-4 mt-2">
+          <a href="#" class="hover:text-slate-600 transition">Privacy Policy</a>
+          <span>·</span>
+          <a href="#" class="hover:text-slate-600 transition">Terms of Service</a>
+          <span>·</span>
+          <a href="#" class="hover:text-slate-600 transition">Security</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Interactive Scripts -->
+  <script>
+    function togglePasswordVisibility() {
+      const input = document.getElementById('password');
+      if (input.type === 'password') {
+        input.type = 'text';
+      } else {
+        input.type = 'password';
+      }
+    }
+
+    function simulateSignIn() {
+      const btn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnSpinner = document.getElementById('btnSpinner');
+      const alert = document.getElementById('authAlert');
+      
+      alert.classList.add('hidden');
+      btn.disabled = true;
+      btnText.innerText = 'Signing in…';
+      btnSpinner.classList.remove('hidden');
+
+      setTimeout(() => {
+        btnText.innerText = 'Authenticated ✓';
+        btn.classList.remove('bg-brand-700', 'hover:bg-brand-800');
+        btn.classList.add('bg-emerald-600');
+        btnSpinner.classList.add('hidden');
+      }, 900);
+    }
+
+    function simulateGoogleSSO() {
+      const btn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnSpinner = document.getElementById('btnSpinner');
+      btn.disabled = true;
+      btnText.innerText = 'Redirecting to Google…';
+      btnSpinner.classList.remove('hidden');
+      setTimeout(() => {
+        btnText.innerText = 'Sign In';
+        btn.disabled = false;
+        btnSpinner.classList.add('hidden');
+      }, 800);
+    }
+
+    function setAuthErrorState() {
+      const alert = document.getElementById('authAlert');
+      const alertTitle = document.getElementById('authAlertTitle');
+      const alertDesc = document.getElementById('authAlertDesc');
+      const emailErr = document.getElementById('emailError');
+      emailErr.classList.add('hidden');
+      alertTitle.innerText = "Email or password is incorrect.";
+      alertDesc.innerText = "Please check your login credentials and try again.";
+      alert.classList.remove('hidden');
+    }
+
+    function setEmailErrorState() {
+      const emailInput = document.getElementById('email');
+      const emailErr = document.getElementById('emailError');
+      const alert = document.getElementById('authAlert');
+      alert.classList.add('hidden');
+      emailInput.classList.add('border-red-500', 'focus:ring-red-200');
+      emailErr.classList.remove('hidden');
+    }
+
+    function resetDefaultState() {
+      const emailInput = document.getElementById('email');
+      const emailErr = document.getElementById('emailError');
+      const alert = document.getElementById('authAlert');
+      const btn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnSpinner = document.getElementById('btnSpinner');
+
+      emailInput.classList.remove('border-red-500', 'focus:ring-red-200');
+      emailErr.classList.add('hidden');
+      alert.classList.add('hidden');
+      btn.disabled = false;
+      btnText.innerText = 'Sign In';
+      btn.className = "w-full flex items-center justify-center py-2.5 px-4 rounded-xl text-sm font-semibold text-white bg-brand-700 hover:bg-brand-800 active:bg-brand-900 focus:outline-none focus:ring-4 focus:ring-brand-700/25 shadow-sm shadow-brand-700/20 transition-all duration-150 disabled:opacity-75 disabled:cursor-not-allowed";
+      btnSpinner.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
