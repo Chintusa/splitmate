@@ -1,7 +1,6 @@
 # SplitMate 💸
 
 SplitMate is an enterprise-grade shared expense management application (a Splitwise-style tool) where users form groups, track shared expenses with equal or exact splits, compute real-time simplified net debts ("who owes whom"), settle up balances, and receive instant WebSocket-driven live updates without page reloads.
-
 ---
 
 ## 1. What the App Does
